@@ -1,119 +1,103 @@
 #include <iostream>
 #include <stack>
 #include <string>
-#include <map>
 #include <cctype>
-#include <cmath>
-#include <iomanip>
+using namespace std;
 
+// Operator precedence
 int precedence(char op) {
     if (op == '^') return 3;
     if (op == '*' || op == '/') return 2;
     if (op == '+' || op == '-') return 1;
-    return -1;
+    return 0;
 }
 
-// a. Convert Infix to Postfix
-std::string infixToPostfix(const std::string& infix) {
-    std::stack<char> st;
-    std::string postfix = "";
+// Convert Infix to Postfix
+string infixToPostfix(string infix) {
+    stack<char> s;
+    string postfix = "";
 
-    for (char ch : infix) {
-        if (std::isspace(ch)) continue;
+    for (int i = 0; i < infix.length(); i++) {
+        char ch = infix[i];
 
-        if (std::isalnum(ch)) {
+        // If operand, add directly to postfix
+        if (isalnum(ch)) {
             postfix += ch;
         } else if (ch == '(') {
-            st.push(ch);
+            s.push(ch);
         } else if (ch == ')') {
-            while (!st.empty() && st.top() != '(') {
-                postfix += st.top();
-                st.pop();
+            while (!s.empty() && s.top() != '(') {
+                postfix += s.top();
+                s.pop();
             }
-            if (!st.empty() && st.top() == '(') st.pop();
+            if (!s.empty()) s.pop(); // remove '('
         } else {
-            while (!st.empty() && st.top() != '(' && precedence(st.top()) >= precedence(ch)) {
-                postfix += st.top();
-                st.pop();
+            // Operator
+            while (!s.empty() && precedence(s.top()) >= precedence(ch)) {
+                postfix += s.top();
+                s.pop();
             }
-            st.push(ch);
+            s.push(ch);
         }
     }
 
-    while (!st.empty()) {
-        postfix += st.top();
-        st.pop();
+    while (!s.empty()) {
+        postfix += s.top();
+        s.pop();
     }
     return postfix;
 }
 
-// b. Evaluate Postfix Expression for given student marks input
-double evaluatePostfix(const std::string& postfix, const std::map<char, double>& values) {
-    std::stack<double> st;
+// Evaluate Postfix expression with numeric values
+int evaluatePostfix(string postfix) {
+    stack<int> s;
 
-    for (char ch : postfix) {
-        if (std::isalpha(ch)) {
-            if (values.find(ch) != values.end()) {
-                st.push(values.at(ch));
-            } else {
-                std::cout << "Error: Value for variable " << ch << " not provided! Defaulting to 0.\n";
-                st.push(0.0);
-            }
-        } else if (std::isdigit(ch)) {
-            st.push(ch - '0');
-        } else {
-            if (st.size() < 2) {
-                std::cout << "Malformed postfix expression!\n";
-                return 0.0;
-            }
-            double val2 = st.top(); st.pop();
-            double val1 = st.top(); st.pop();
+    for (int i = 0; i < postfix.length(); i++) {
+        char ch = postfix[i];
+
+        if (isdigit(ch)) {
+            s.push(ch - '0'); // convert char to int
+        } else if (ch == '+' || ch == '-' || ch == '*' || ch == '/') {
+            int val2 = s.top(); s.pop();
+            int val1 = s.top(); s.pop();
 
             switch (ch) {
-                case '+': st.push(val1 + val2); break;
-                case '-': st.push(val1 - val2); break;
-                case '*': st.push(val1 * val2); break;
-                case '/': 
-                    if (val2 == 0) {
-                        std::cout << "Division by zero!\n";
-                        return 0.0;
-                    }
-                    st.push(val1 / val2); 
-                    break;
-                case '^': st.push(std::pow(val1, val2)); break;
+                case '+': s.push(val1 + val2); break;
+                case '-': s.push(val1 - val2); break;
+                case '*': s.push(val1 * val2); break;
+                case '/': s.push(val1 / val2); break;
             }
         }
     }
-    return st.empty() ? 0.0 : st.top();
+    return s.top();
 }
 
 int main() {
-    std::cout << "=== Marks Calculation Formula Evaluation ===\n";
-    // Example formula: Final Internal = TheoryTest1 (A) + TheoryTest2 (B) + Assignment (C) / 2
-    // Written as infix: (A+B)/2+C
-    std::string infix = "(A+B)/2+C";
-    std::cout << "Marks Formula (Infix):   " << infix << "\n";
+    int choice;
+    do {
+        cout << "\n--- Infix & Postfix Operations ---\n";
+        cout << "1. Convert Infix to Postfix\n";
+        cout << "2. Evaluate Postfix Expression\n";
+        cout << "3. Exit\n";
+        cout << "Enter choice: ";
+        cin >> choice;
 
-    // a. Infix to postfix
-    std::string postfix = infixToPostfix(infix);
-    std::cout << "Marks Formula (Postfix): " << postfix << "\n\n";
-
-    // b. Given inputs for Student
-    // A (Test 1) = 18, B (Test 2) = 16, C (Assignment) = 10
-    std::map<char, double> studentMarks = {
-        {'A', 18.0},
-        {'B', 16.0},
-        {'C', 10.0}
-    };
-
-    std::cout << "Given Student Input Marks:\n";
-    std::cout << "  Test 1 (A):     " << studentMarks['A'] << " / 20\n";
-    std::cout << "  Test 2 (B):     " << studentMarks['B'] << " / 20\n";
-    std::cout << "  Assignment (C): " << studentMarks['C'] << " / 10\n\n";
-
-    double finalInternal = evaluatePostfix(postfix, studentMarks);
-    std::cout << "Evaluated Final Internal Marks: " 
-              << std::fixed << std::setprecision(2) << finalInternal << " / 25\n";
+        if (choice == 1) {
+            string infix;
+            cout << "Enter Infix Expression (e.g. (A+B)*(C-D)): ";
+            cin >> infix;
+            cout << "Postfix: " << infixToPostfix(infix) << "\n";
+        } else if (choice == 2) {
+            string postfix;
+            cout << "Enter numeric Postfix Expression (e.g. 53+82-*): ";
+            cin >> postfix;
+            cout << "Evaluation Result: " << evaluatePostfix(postfix) << "\n";
+        } else if (choice == 3) {
+            cout << "Exiting...\n";
+        } else {
+            cout << "Invalid choice!\n";
+        }
+    } while (choice != 3);
 
     return 0;
 }

@@ -1,118 +1,95 @@
 #include <iostream>
 #include <string>
+using namespace std;
 
-/*
- * Circular Queue for Bus Pass Distribution:
- * a. Insert student IDs in circular queue
- * b. Delete student ID as pass is issued
- * c. Detect queue full/empty conditions
- * d. Display the circular queue
- */
+const int MAX = 5; // Circular queue size
 
-class BusPassQueue {
-private:
-    std::string* arr;
-    int capacity;
-    int front;
-    int rear;
-    int count;
+string q[MAX];
+int front = -1;
+int rear = -1;
 
-public:
-    BusPassQueue(int size = 5) : capacity(size), front(0), rear(-1), count(0) {
-        arr = new std::string[capacity];
+// Check if Full
+bool isFull() {
+    return (front == (rear + 1) % MAX);
+}
+
+// Check if Empty
+bool isEmpty() {
+    return (front == -1);
+}
+
+// Enqueue into circular queue
+void enqueue() {
+    if (isFull()) {
+        cout << "Bus Pass Queue is FULL! Please wait.\n";
+        return;
     }
+    string studentId;
+    cout << "Enter Student ID for Bus Pass: ";
+    cin >> studentId;
 
-    ~BusPassQueue() {
-        delete[] arr;
+    if (isEmpty()) {
+        front = 0;
+        rear = 0;
+    } else {
+        rear = (rear + 1) % MAX;
     }
+    q[rear] = studentId;
+    cout << "Student " << studentId << " added to queue at position " << rear << ".\n";
+}
 
-    // c. Detect queue empty condition
-    bool isEmpty() const {
-        return count == 0;
+// Dequeue from circular queue
+void dequeue() {
+    if (isEmpty()) {
+        cout << "Bus Pass Queue is EMPTY!\n";
+        return;
     }
+    cout << "Issued Bus Pass to Student: " << q[front] << "\n";
 
-    // c. Detect queue full condition
-    bool isFull() const {
-        return count == capacity;
+    if (front == rear) {
+        // Only one element was present
+        front = -1;
+        rear = -1;
+    } else {
+        front = (front + 1) % MAX;
     }
+}
 
-    // a. Insert student ID in circular queue
-    void insertStudentID(const std::string& studentId) {
-        if (isFull()) {
-            std::cout << "[FULL CONDITION DETECTED] Bus Pass Queue is full! Cannot add Student ID: " 
-                      << studentId << "\n";
-            return;
-        }
-        rear = (rear + 1) % capacity;
-        arr[rear] = studentId;
-        count++;
-        std::cout << "Enqueued Student ID [" << studentId << "] at index " << rear 
-                  << " (Queue size: " << count << "/" << capacity << ")\n";
+// Display circular queue
+void display() {
+    if (isEmpty()) {
+        cout << "Queue is Empty!\n";
+        return;
     }
-
-    // b. Delete student ID as pass is issued
-    void issuePass() {
-        if (isEmpty()) {
-            std::cout << "[EMPTY CONDITION DETECTED] Bus Pass Queue is empty! No students waiting.\n";
-            return;
-        }
-        std::string issuedStudent = arr[front];
-        front = (front + 1) % capacity;
-        count--;
-        std::cout << ">>> Bus Pass ISSUED to Student ID: " << issuedStudent 
-                  << " (Remaining waiting: " << count << ") <<<\n";
+    cout << "\n--- Bus Pass Waiting Line ---\n";
+    int i = front;
+    while (true) {
+        cout << q[i] << " ";
+        if (i == rear) break;
+        i = (i + 1) % MAX;
     }
-
-    // d. Display circular queue
-    void display() const {
-        if (isEmpty()) {
-            std::cout << "Bus Pass Queue is EMPTY.\n\n";
-            return;
-        }
-        std::cout << "\n--- Current Bus Pass Circular Queue ---\n";
-        std::cout << "Front index: " << front << " | Rear index: " << rear << "\n";
-        std::cout << "Queue contents: ";
-        for (int i = 0; i < count; ++i) {
-            int actualIdx = (front + i) % capacity;
-            std::cout << "[" << actualIdx << "]: " << arr[actualIdx] << "  ";
-        }
-        std::cout << "\n----------------------------------------\n\n";
-    }
-};
+    cout << "\n";
+}
 
 int main() {
-    BusPassQueue bpq(4); // Fixed circular capacity of 4
+    int choice;
+    do {
+        cout << "\n--- Bus Pass Counter (Circular Queue) ---\n";
+        cout << "1. Issue Token (Enqueue)\n";
+        cout << "2. Serve Student (Dequeue)\n";
+        cout << "3. Display Queue\n";
+        cout << "4. Exit\n";
+        cout << "Enter choice: ";
+        cin >> choice;
 
-    std::cout << "=== Bus Pass Distribution Counter (Circular Queue) ===\n\n";
-
-    // Insert student IDs
-    bpq.insertStudentID("STU-1001");
-    bpq.insertStudentID("STU-1002");
-    bpq.insertStudentID("STU-1003");
-    bpq.insertStudentID("STU-1004");
-    bpq.display();
-
-    // Trigger full condition
-    bpq.insertStudentID("STU-1005");
-
-    // Issue passes (Delete from queue)
-    bpq.issuePass();
-    bpq.issuePass();
-    bpq.display();
-
-    // Insert more into reused wrapped-around circular slots
-    bpq.insertStudentID("STU-1005");
-    bpq.insertStudentID("STU-1006");
-    bpq.display();
-
-    // Issue all remaining
-    bpq.issuePass();
-    bpq.issuePass();
-    bpq.issuePass();
-    bpq.issuePass();
-
-    // Trigger empty condition
-    bpq.issuePass();
+        switch (choice) {
+            case 1: enqueue(); break;
+            case 2: dequeue(); break;
+            case 3: display(); break;
+            case 4: cout << "Exiting...\n"; break;
+            default: cout << "Invalid choice!\n";
+        }
+    } while (choice != 4);
 
     return 0;
 }

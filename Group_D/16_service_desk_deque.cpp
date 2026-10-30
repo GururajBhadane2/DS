@@ -1,114 +1,131 @@
 #include <iostream>
 #include <string>
-#include <deque>
-#include <iomanip>
+using namespace std;
 
-/*
- * Student Service Desk Using Deque:
- * a. Add emergency cases at front
- * b. Add normal cases at rear
- * c. Serve from front
- * d. Display deque after each operation
- */
+const int MAX = 10;
 
-struct ServiceRequest {
-    int ticketId;
-    std::string studentName;
-    std::string issueDescription;
-    bool isEmergency;
+struct Request {
+    int id;
+    string name;
+    string type; // "Emergency" or "Normal"
 };
 
-class StudentServiceDesk {
-private:
-    std::deque<ServiceRequest> deskQueue;
-    int nextTicketId;
+Request dequeArr[MAX];
+int front = -1;
+int rear = -1;
+int ticketCounter = 1;
 
-public:
-    StudentServiceDesk() : nextTicketId(101) {}
+bool isFull() {
+    return (front == 0 && rear == MAX - 1) || (front == rear + 1);
+}
 
-    // a. Add emergency cases at front
-    void addEmergencyRequest(const std::string& name, const std::string& issue) {
-        ServiceRequest req = {nextTicketId++, name, issue, true};
-        deskQueue.push_front(req);
-        std::cout << "[EMERGENCY ADDED TO FRONT] Ticket #" << req.ticketId 
-                  << " (" << name << ": " << issue << ")\n";
-        displayDeque();
+bool isEmpty() {
+    return (front == -1);
+}
+
+// Insert at Front (for Emergency Requests)
+void insertFront() {
+    if (isFull()) {
+        cout << "Service Desk Queue is FULL!\n";
+        return;
     }
+    Request req;
+    req.id = ticketCounter++;
+    req.type = "Emergency";
+    cout << "Enter Student Name: ";
+    cin >> req.name;
 
-    // b. Add normal cases at rear
-    void addNormalRequest(const std::string& name, const std::string& issue) {
-        ServiceRequest req = {nextTicketId++, name, issue, false};
-        deskQueue.push_back(req);
-        std::cout << "[NORMAL CASE ADDED TO REAR] Ticket #" << req.ticketId 
-                  << " (" << name << ": " << issue << ")\n";
-        displayDeque();
+    if (isEmpty()) {
+        front = 0;
+        rear = 0;
+    } else if (front == 0) {
+        front = MAX - 1;
+    } else {
+        front--;
     }
+    dequeArr[front] = req;
+    cout << "Emergency Ticket #" << req.id << " added at FRONT for " << req.name << ".\n";
+}
 
-    // c. Serve from front
-    void serveRequest() {
-        if (deskQueue.empty()) {
-            std::cout << "Service Desk is free! No pending requests.\n";
-            return;
-        }
-        ServiceRequest served = deskQueue.front();
-        deskQueue.pop_front();
-
-        std::cout << "\n>>> SERVING TICKET #" << served.ticketId << " (" 
-                  << (served.isEmergency ? "EMERGENCY" : "NORMAL") << ") <<<\n";
-        std::cout << "    Student: " << served.studentName << "\n";
-        std::cout << "    Issue:   " << served.issueDescription << "\n\n";
-
-        displayDeque();
+// Insert at Rear (for Normal Requests)
+void insertRear() {
+    if (isFull()) {
+        cout << "Service Desk Queue is FULL!\n";
+        return;
     }
+    Request req;
+    req.id = ticketCounter++;
+    req.type = "Normal";
+    cout << "Enter Student Name: ";
+    cin >> req.name;
 
-    // d. Display deque after each operation
-    void displayDeque() const {
-        if (deskQueue.empty()) {
-            std::cout << "Service Desk Deque is currently empty.\n\n";
-            return;
-        }
-
-        std::cout << "---------------- Current Service Desk Queue ----------------\n";
-        std::cout << std::left << std::setw(10) << "Position"
-                  << std::setw(12) << "Ticket #"
-                  << std::setw(14) << "Type"
-                  << std::setw(20) << "Student Name"
-                  << std::setw(30) << "Issue" << "\n";
-        std::cout << "------------------------------------------------------------\n";
-        int pos = 1;
-        for (const auto& req : deskQueue) {
-            std::cout << std::left << std::setw(10) << (pos == 1 ? "FRONT (1)" : std::to_string(pos))
-                      << std::setw(12) << ("#" + std::to_string(req.ticketId))
-                      << std::setw(14) << (req.isEmergency ? "[EMERGENCY]" : "[NORMAL]")
-                      << std::setw(20) << req.studentName
-                      << std::setw(30) << req.issueDescription << "\n";
-            pos++;
-        }
-        std::cout << "------------------------------------------------------------\n\n";
+    if (isEmpty()) {
+        front = 0;
+        rear = 0;
+    } else if (rear == MAX - 1) {
+        rear = 0;
+    } else {
+        rear++;
     }
-};
+    dequeArr[rear] = req;
+    cout << "Normal Ticket #" << req.id << " added at REAR for " << req.name << ".\n";
+}
+
+// Delete from Front (Serve standard order)
+void deleteFront() {
+    if (isEmpty()) {
+        cout << "No requests to serve!\n";
+        return;
+    }
+    cout << "Serving Ticket #" << dequeArr[front].id << " (" << dequeArr[front].name 
+         << " - " << dequeArr[front].type << ") from FRONT.\n";
+
+    if (front == rear) {
+        front = -1;
+        rear = -1;
+    } else if (front == MAX - 1) {
+        front = 0;
+    } else {
+        front++;
+    }
+}
+
+// Display Deque
+void display() {
+    if (isEmpty()) {
+        cout << "Queue is Empty!\n";
+        return;
+    }
+    cout << "\n--- Service Desk Requests (Front to Rear) ---\n";
+    int i = front;
+    while (true) {
+        cout << "Ticket #" << dequeArr[i].id << " [" << dequeArr[i].type << "] - " << dequeArr[i].name << "\n";
+        if (i == rear) break;
+        i = (i + 1) % MAX;
+    }
+}
 
 int main() {
-    StudentServiceDesk desk;
+    int choice;
+    do {
+        cout << "\n--- Student Service Desk (Deque) ---\n";
+        cout << "1. Add Emergency Request (Insert Front)\n";
+        cout << "2. Add Normal Request (Insert Rear)\n";
+        cout << "3. Serve Next Request (Delete Front)\n";
+        cout << "4. Display All Pending Requests\n";
+        cout << "5. Exit\n";
+        cout << "Enter choice: ";
+        cin >> choice;
 
-    std::cout << "=== Student Help & Service Desk (Deque System) ===\n\n";
-
-    // b. Add normal cases at rear
-    desk.addNormalRequest("Aarav", "Fee receipt photocopy required");
-    desk.addNormalRequest("Bhavna", "Bonafide certificate application");
-
-    // a. Add emergency cases at front
-    desk.addEmergencyRequest("Dr. Sharma (Faculty)", "Urgent exam hall ticket discrepancy");
-
-    // b. Add another normal case
-    desk.addNormalRequest("Chirag", "Library card lost report");
-
-    // a. Add another emergency case
-    desk.addEmergencyRequest("Pooja", "Medical emergency leave submission");
-
-    // c. Serve requests from front
-    desk.serveRequest();
-    desk.serveRequest();
+        switch (choice) {
+            case 1: insertFront(); break;
+            case 2: insertRear(); break;
+            case 3: deleteFront(); break;
+            case 4: display(); break;
+            case 5: cout << "Exiting...\n"; break;
+            default: cout << "Invalid choice!\n";
+        }
+    } while (choice != 5);
 
     return 0;
 }

@@ -1,58 +1,69 @@
 #include <iostream>
-#include <iomanip>
+using namespace std;
 
-/*
- * Quick Sort for Student Percentages:
- * a. Partition the list using pivot.
- * b. Recursively apply Quick Sort.
- * c. Display sorted percentages.
- */
-
-void printPercentages(const float arr[], int size) {
-    for (int i = 0; i < size; ++i) {
-        std::cout << std::fixed << std::setprecision(2) << arr[i] << "% ";
-    }
-    std::cout << "\n";
-}
-
-// a. Partition the list
+// Partition function using last element as pivot
 int partition(float arr[], int low, int high) {
-    float pivot = arr[high]; // Last element as pivot
+    float pivot = arr[high];
     int i = low - 1;
 
-    for (int j = low; j < high; ++j) {
+    for (int j = low; j < high; j++) {
         if (arr[j] <= pivot) {
             i++;
-            std::swap(arr[i], arr[j]);
+            float temp = arr[i];
+            arr[i] = arr[j];
+            arr[j] = temp;
         }
     }
-    std::swap(arr[i + 1], arr[high]);
+    // Place pivot in correct position
+    float temp = arr[i + 1];
+    arr[i + 1] = arr[high];
+    arr[high] = temp;
     return (i + 1);
 }
 
-// b. Recursively apply Quick Sort
-void quickSort(float arr[], int low, int high, int totalSize) {
+// Quick Sort function
+void quickSort(float arr[], int low, int high) {
     if (low < high) {
         int pi = partition(arr, low, high);
-
-        // Recursive sort
-        quickSort(arr, low, pi - 1, totalSize);
-        quickSort(arr, pi + 1, high, totalSize);
+        quickSort(arr, low, pi - 1);
+        quickSort(arr, pi + 1, high);
     }
 }
 
+// Display array
+void display(float arr[], int n) {
+    for (int i = 0; i < n; i++) {
+        cout << arr[i] << "%  ";
+    }
+    cout << "\n";
+}
+
 int main() {
-    float percentages[] = {78.50f, 92.40f, 65.25f, 88.90f, 54.00f, 96.75f, 81.30f, 74.60f};
-    int n = sizeof(percentages) / sizeof(percentages[0]);
+    int n;
+    cout << "Enter number of students: ";
+    cin >> n;
 
-    std::cout << "=== Student Percentages Before Quick Sort ===\n";
-    printPercentages(percentages, n);
+    float marks[100];
+    cout << "Enter percentages for " << n << " students:\n";
+    for (int i = 0; i < n; i++) {
+        cout << "Student " << (i + 1) << ": ";
+        cin >> marks[i];
+    }
 
-    quickSort(percentages, 0, n - 1, n);
+    cout << "\nPercentages before sorting:\n";
+    display(marks, n);
 
-    // c. Display the sorted percentage list
-    std::cout << "\n=== Student Percentages After Quick Sort (Ascending) ===\n";
-    printPercentages(percentages, n);
+    quickSort(marks, 0, n - 1);
+
+    cout << "\nPercentages in Ascending Order:\n";
+    display(marks, n);
+
+    // Display top scorers (from end of sorted array)
+    cout << "\n--- Top Scorers ---\n";
+    int top = (n < 5) ? n : 5;
+    for (int i = 0; i < top; i++) {
+        cout << "Rank " << (i + 1) << ": " << marks[n - 1 - i] << "%\n";
+    }
 
     return 0;
 }

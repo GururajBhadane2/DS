@@ -1,88 +1,86 @@
 #include <iostream>
 #include <string>
-#include <vector>
+using namespace std;
 
-class BrowserHistoryStack {
-private:
-    std::vector<std::string> historyStack;
-    std::string currentPage;
+const int MAX = 50;
+string history[MAX];
+int top = -1;
 
-public:
-    BrowserHistoryStack(const std::string& homePage = "portal.college.edu/home") {
-        currentPage = homePage;
-        historyStack.push_back(currentPage);
+// Push: Visit a new page
+void visitPage() {
+    if (top >= MAX - 1) {
+        cout << "History is full!\n";
+        return;
     }
+    string url;
+    cout << "Enter URL (e.g. google.com): ";
+    cin >> url;
+    top++;
+    history[top] = url;
+    cout << "Navigated to: " << url << "\n";
+}
 
-    // a. Visit a new page (push URL)
-    void visit(const std::string& url) {
-        historyStack.push_back(url);
-        currentPage = url;
-        std::cout << "Visited: " << url << "\n";
-    }
-
-    // b. Go back to previous page (pop URL)
-    void goBack() {
-        if (historyStack.size() <= 1) {
-            std::cout << "No previous page to go back to! (At initial page)\n";
-            return;
+// Pop: Go back to previous page
+void goBack() {
+    if (top <= 0) {
+        if (top == 0) {
+            cout << "Already at initial page! Cannot go back further.\n";
+        } else {
+            cout << "No history yet!\n";
         }
-        std::string leavingPage = historyStack.back();
-        historyStack.pop_back();
-        currentPage = historyStack.back();
-        std::cout << "Went back from [" << leavingPage << "] to [" << currentPage << "]\n";
+        return;
     }
+    cout << "Going back from: " << history[top] << "\n";
+    top--;
+    cout << "Current Page: " << history[top] << "\n";
+}
 
-    // c. Display current page
-    void showCurrentPage() const {
-        std::cout << "Current Page: >>> " << currentPage << " <<<\n";
+// Display current page
+void showCurrent() {
+    if (top == -1) {
+        cout << "No page open!\n";
+    } else {
+        cout << "Currently viewing: " << history[top] << "\n";
     }
+}
 
-    // d. Show entire browsing history stack
-    void displayHistory() const {
-        if (historyStack.empty()) {
-            std::cout << "History is empty.\n";
-            return;
-        }
-
-        std::cout << "\n============================================\n";
-        std::cout << "    Browsing History Stack (Top to Bottom)  \n";
-        std::cout << "============================================\n";
-        for (int i = historyStack.size() - 1; i >= 0; --i) {
-            if (i == static_cast<int>(historyStack.size() - 1)) {
-                std::cout << " [TOP/CURRENT] -> " << historyStack[i] << "\n";
-            } else {
-                std::cout << "               -> " << historyStack[i] << "\n";
-            }
-        }
-        std::cout << "============================================\n\n";
+// Display all visited history
+void displayHistory() {
+    if (top == -1) {
+        cout << "History is empty!\n";
+        return;
     }
-};
+    cout << "\n--- Browser History (Latest on top) ---\n";
+    for (int i = top; i >= 0; i--) {
+        cout << history[i] << (i == top ? "  <-- Current" : "") << "\n";
+    }
+}
 
 int main() {
-    BrowserHistoryStack browser("portal.college.edu/dashboard");
+    // Start with a home page
+    top = 0;
+    history[top] = "home.html";
 
-    browser.showCurrentPage();
+    int choice;
+    do {
+        cout << "\n--- Browser Navigation Stack ---\n";
+        cout << "1. Visit New Page (Push)\n";
+        cout << "2. Go Back (Pop)\n";
+        cout << "3. Current Page (Top)\n";
+        cout << "4. Display Full History\n";
+        cout << "5. Exit\n";
+        cout << "Enter choice: ";
+        cin >> choice;
 
-    // a. Visit new pages
-    browser.visit("portal.college.edu/attendance");
-    browser.visit("portal.college.edu/marks");
-    browser.visit("portal.college.edu/fees-payment");
-
-    // c. Show current page
-    browser.showCurrentPage();
-
-    // d. Show full history stack
-    browser.displayHistory();
-
-    // b. Go back
-    browser.goBack();
-    browser.showCurrentPage();
-
-    browser.goBack();
-    browser.showCurrentPage();
-
-    // d. Show updated history
-    browser.displayHistory();
+        switch (choice) {
+            case 1: visitPage(); break;
+            case 2: goBack(); break;
+            case 3: showCurrent(); break;
+            case 4: displayHistory(); break;
+            case 5: cout << "Exiting browser...\n"; break;
+            default: cout << "Invalid choice!\n";
+        }
+    } while (choice != 5);
 
     return 0;
 }

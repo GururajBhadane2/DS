@@ -1,148 +1,92 @@
 #include <iostream>
-#include <iomanip>
-#include <cctype>
+using namespace std;
 
-struct AttendanceNode {
-    int day;
-    char status; // 'P' or 'A'
-    AttendanceNode* next;
-
-    AttendanceNode(int d, char s) : day(d), status(std::toupper(s)), next(nullptr) {}
+// Node structure for Attendance
+struct Node {
+    int roll;
+    char status; // 'P' for Present, 'A' for Absent
+    Node* next;
 };
 
-class AttendanceTracker {
-private:
-    AttendanceNode* head;
-    int totalDays;
+Node* head = NULL;
 
-public:
-    AttendanceTracker() : head(nullptr), totalDays(0) {}
+// Add attendance entry at the end
+void markAttendance() {
+    Node* newNode = new Node();
+    cout << "Enter Roll No: ";
+    cin >> newNode->roll;
+    cout << "Enter Status (P for Present, A for Absent): ";
+    cin >> newNode->status;
+    newNode->next = NULL;
 
-    ~AttendanceTracker() {
-        AttendanceNode* curr = head;
-        while (curr) {
-            AttendanceNode* temp = curr->next;
-            delete curr;
-            curr = temp;
+    if (head == NULL) {
+        head = newNode;
+    } else {
+        Node* temp = head;
+        while (temp->next != NULL) {
+            temp = temp->next;
         }
+        temp->next = newNode;
     }
+    cout << "Attendance recorded!\n";
+}
 
-    // a. Insert attendance (P/A) at the end of the list
-    void insertAttendance(char status) {
-        char s = std::toupper(status);
-        if (s != 'P' && s != 'A') {
-            std::cout << "Invalid status! Use 'P' for Present or 'A' for Absent.\n";
-            return;
-        }
-
-        totalDays++;
-        AttendanceNode* newNode = new AttendanceNode(totalDays, s);
-
-        if (!head) {
-            head = newNode;
-        } else {
-            AttendanceNode* temp = head;
-            while (temp->next) {
-                temp = temp->next;
-            }
-            temp->next = newNode;
-        }
-        std::cout << "Marked Day " << totalDays << ": " << (s == 'P' ? "Present" : "Absent") << ".\n";
+// Display attendance of all students
+void display() {
+    if (head == NULL) {
+        cout << "No attendance records found!\n";
+        return;
     }
-
-    // b. Update the attendance of a given day
-    void updateAttendance(int day, char newStatus) {
-        char s = std::toupper(newStatus);
-        if (s != 'P' && s != 'A') {
-            std::cout << "Invalid status! Use 'P' or 'A'.\n";
-            return;
-        }
-
-        AttendanceNode* curr = head;
-        while (curr) {
-            if (curr->day == day) {
-                char oldStatus = curr->status;
-                curr->status = s;
-                std::cout << "Updated Day " << day << " status from " << oldStatus << " to " << s << ".\n";
-                return;
-            }
-            curr = curr->next;
-        }
-        std::cout << "Day " << day << " not found in attendance record.\n";
+    cout << "\n--- Attendance List ---\n";
+    cout << "Roll No\tStatus\n";
+    Node* temp = head;
+    while (temp != NULL) {
+        cout << temp->roll << "\t" << temp->status << "\n";
+        temp = temp->next;
     }
+}
 
-    // c. Calculate total number of Present and Absent days
-    void calculateAttendanceSummary(int& presentCount, int& absentCount, double& percentage) const {
-        presentCount = 0;
-        absentCount = 0;
-        AttendanceNode* curr = head;
-
-        while (curr) {
-            if (curr->status == 'P') presentCount++;
-            else if (curr->status == 'A') absentCount++;
-            curr = curr->next;
-        }
-
-        if (totalDays > 0) {
-            percentage = (static_cast<double>(presentCount) / totalDays) * 100.0;
-        } else {
-            percentage = 0.0;
-        }
+// Calculate attendance summary
+void showSummary() {
+    if (head == NULL) {
+        cout << "No records available!\n";
+        return;
     }
-
-    // d. Display the complete attendance list
-    void displayAttendance() const {
-        if (!head) {
-            std::cout << "No attendance records available.\n";
-            return;
+    int total = 0, present = 0;
+    Node* temp = head;
+    while (temp != NULL) {
+        total++;
+        if (temp->status == 'P' || temp->status == 'p') {
+            present++;
         }
-
-        std::cout << "\n=========================================\n";
-        std::cout << "          Daily Attendance Log           \n";
-        std::cout << "=========================================\n";
-        std::cout << std::left << std::setw(10) << "Day" << std::setw(15) << "Status" << "\n";
-        std::cout << "-----------------------------------------\n";
-
-        AttendanceNode* curr = head;
-        while (curr) {
-            std::cout << std::left << std::setw(10) << ("Day " + std::to_string(curr->day))
-                      << std::setw(15) << (curr->status == 'P' ? "Present [P]" : "Absent  [A]") << "\n";
-            curr = curr->next;
-        }
-        std::cout << "-----------------------------------------\n";
-
-        int p = 0, a = 0;
-        double pct = 0.0;
-        calculateAttendanceSummary(p, a, pct);
-        std::cout << "Total Days: " << totalDays 
-                  << " | Present: " << p 
-                  << " | Absent: " << a 
-                  << " | Percentage: " << std::fixed << std::setprecision(2) << pct << "%\n";
-        std::cout << "=========================================\n\n";
+        temp = temp->next;
     }
-};
+    cout << "\n--- Summary ---\n";
+    cout << "Total Students: " << total << "\n";
+    cout << "Present: " << present << "\n";
+    cout << "Absent: " << (total - present) << "\n";
+    cout << "Percentage: " << (present * 100.0 / total) << "%\n";
+}
 
 int main() {
-    AttendanceTracker tracker;
+    int choice;
+    do {
+        cout << "\n--- Student Attendance (SLL) ---\n";
+        cout << "1. Mark Attendance\n";
+        cout << "2. Display Attendance\n";
+        cout << "3. Attendance Summary\n";
+        cout << "4. Exit\n";
+        cout << "Enter your choice: ";
+        cin >> choice;
 
-    std::cout << "=== Student Attendance Tracking System (SLL) ===\n";
-    // a. Insert attendance
-    tracker.insertAttendance('P');
-    tracker.insertAttendance('P');
-    tracker.insertAttendance('A');
-    tracker.insertAttendance('P');
-    tracker.insertAttendance('A');
-    tracker.insertAttendance('P');
-    tracker.insertAttendance('P');
-
-    // d. Display attendance
-    tracker.displayAttendance();
-
-    // b. Update attendance for Day 3 (from A to P)
-    tracker.updateAttendance(3, 'P');
-
-    // d. Display updated attendance & calculation
-    tracker.displayAttendance();
+        switch (choice) {
+            case 1: markAttendance(); break;
+            case 2: display(); break;
+            case 3: showSummary(); break;
+            case 4: cout << "Exiting...\n"; break;
+            default: cout << "Invalid choice!\n";
+        }
+    } while (choice != 4);
 
     return 0;
 }

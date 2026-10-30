@@ -1,129 +1,81 @@
 #include <iostream>
 #include <string>
-#include <vector>
+using namespace std;
 
-/*
- * Student Admission Queue:
- * a. Enqueue student token number
- * b. Dequeue and display processed student
- * c. Display front and rear token number
- * d. Display complete queue
- */
+const int MAX = 10;
 
-struct StudentApplicant {
-    int tokenNo;
-    std::string name;
-    std::string course;
+struct Student {
+    int token;
+    string name;
 };
 
-class AdmissionQueue {
-private:
-    StudentApplicant queueArr[100];
-    int front;
-    int rear;
-    int count;
-    int capacity;
+Student q[MAX];
+int front = -1;
+int rear = -1;
 
-public:
-    AdmissionQueue(int cap = 100) : front(0), rear(-1), count(0), capacity(cap) {}
-
-    bool isEmpty() const {
-        return count == 0;
+// Enqueue: Add student to queue
+void enqueue() {
+    if (rear == MAX - 1) {
+        cout << "Admission Queue is Full!\n";
+        return;
     }
+    if (front == -1) front = 0;
+    rear++;
+    cout << "Enter Token Number: ";
+    cin >> q[rear].token;
+    cout << "Enter Student Name: ";
+    cin >> q[rear].name;
+    cout << "Student " << q[rear].name << " added to waiting queue.\n";
+}
 
-    bool isFull() const {
-        return count == capacity;
+// Dequeue: Process next student
+void dequeue() {
+    if (front == -1 || front > rear) {
+        cout << "Queue is Empty! No students waiting.\n";
+        front = -1;
+        rear = -1;
+        return;
     }
-
-    // a. Enqueue student token number
-    void enqueue(int tokenNo, const std::string& name, const std::string& course) {
-        if (isFull()) {
-            std::cout << "Admission Queue is Full! Cannot issue token " << tokenNo << ".\n";
-            return;
-        }
-        rear++;
-        queueArr[rear] = {tokenNo, name, course};
-        count++;
-        std::cout << "Enqueued Token #" << tokenNo << " for [" << name << " - " << course << "].\n";
+    cout << "Processed Token #" << q[front].token << " (" << q[front].name << ") for admission.\n";
+    front++;
+    if (front > rear) {
+        front = -1;
+        rear = -1;
     }
+}
 
-    // b. Dequeue and display student processes
-    void dequeue() {
-        if (isEmpty()) {
-            std::cout << "Queue is empty. No applicants waiting for admission processing.\n";
-            return;
-        }
-        StudentApplicant processed = queueArr[front];
-        front++;
-        count--;
-        std::cout << "\n>>> PROCESSED ADMISSION FOR: Token #" << processed.tokenNo 
-                  << " | Name: " << processed.name 
-                  << " | Admitted to: " << processed.course << " <<<\n\n";
+// Display queue
+void display() {
+    if (front == -1 || front > rear) {
+        cout << "Queue is Empty!\n";
+        return;
     }
-
-    // c. Display front and rear token number
-    void displayFrontAndRear() const {
-        if (isEmpty()) {
-            std::cout << "Queue is empty. Front and Rear pointers are inactive.\n";
-            return;
-        }
-        std::cout << "------------------------------------------\n";
-        std::cout << "Front Token: #" << queueArr[front].tokenNo 
-                  << " (" << queueArr[front].name << ")\n";
-        std::cout << "Rear Token:  #" << queueArr[rear].tokenNo 
-                  << " (" << queueArr[rear].name << ")\n";
-        std::cout << "------------------------------------------\n";
+    cout << "\n--- Current Admission Queue ---\n";
+    cout << "Token\tName\n";
+    for (int i = front; i <= rear; i++) {
+        cout << q[i].token << "\t" << q[i].name << "\n";
     }
-
-    // d. Display complete queue
-    void displayQueue() const {
-        if (isEmpty()) {
-            std::cout << "Admission Queue is currently empty.\n";
-            return;
-        }
-
-        std::cout << "\n============================================================\n";
-        std::cout << "                Current Admission Waiting Queue             \n";
-        std::cout << "============================================================\n";
-        std::cout << "Position\tToken No\tApplicant Name\t\tCourse\n";
-        std::cout << "------------------------------------------------------------\n";
-        int pos = 1;
-        for (int i = front; i <= rear; ++i) {
-            std::cout << pos++ << "\t\t#" << queueArr[i].tokenNo 
-                      << "\t\t" << queueArr[i].name 
-                      << "\t\t" << queueArr[i].course << "\n";
-        }
-        std::cout << "============================================================\n";
-        std::cout << "Total waiting applicants: " << count << "\n\n";
-    }
-};
+}
 
 int main() {
-    AdmissionQueue admissionQ;
+    int choice;
+    do {
+        cout << "\n--- Student Admission Counter (Linear Queue) ---\n";
+        cout << "1. Enqueue Student\n";
+        cout << "2. Dequeue Student\n";
+        cout << "3. Display Queue\n";
+        cout << "4. Exit\n";
+        cout << "Enter choice: ";
+        cin >> choice;
 
-    std::cout << "=== College Admission Queue Simulation ===\n\n";
-
-    // a. Enqueue students
-    admissionQ.enqueue(101, "Rohan Deshmukh", "Computer Science");
-    admissionQ.enqueue(102, "Ananya Verma",   "Information Tech");
-    admissionQ.enqueue(103, "Kunal Sen",       "Electronics");
-    admissionQ.enqueue(104, "Priya Sharma",    "Data Science");
-
-    // d. Display complete queue
-    admissionQ.displayQueue();
-
-    // c. Display front and rear tokens
-    admissionQ.displayFrontAndRear();
-
-    // b. Dequeue and process
-    admissionQ.dequeue();
-    admissionQ.dequeue();
-
-    // c. Display front and rear tokens after processing
-    admissionQ.displayFrontAndRear();
-
-    // d. Display updated queue
-    admissionQ.displayQueue();
+        switch (choice) {
+            case 1: enqueue(); break;
+            case 2: dequeue(); break;
+            case 3: display(); break;
+            case 4: cout << "Exiting...\n"; break;
+            default: cout << "Invalid choice!\n";
+        }
+    } while (choice != 4);
 
     return 0;
 }

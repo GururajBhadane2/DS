@@ -1,134 +1,117 @@
 #include <iostream>
 #include <string>
-#include <iomanip>
+using namespace std;
 
+// Structure to store Student details
 struct Student {
-    int rollNo;
-    std::string name;
-    double cgpa;
+    int roll;
+    string name;
+    float marks;
 };
 
-class StudentInfoSystem {
-private:
-    Student students[100];
-    int count;
-    int capacity;
+// Global array and student count
+Student s[100];
+int n = 0;
 
-public:
-    StudentInfoSystem(int cap = 100) : count(0), capacity(cap) {}
+// Function to insert a student
+void insertStudent() {
+    if (n >= 100) {
+        cout << "Array is full!\n";
+        return;
+    }
+    cout << "Enter Roll No: ";
+    cin >> s[n].roll;
+    cout << "Enter Name: ";
+    cin >> s[n].name;
+    cout << "Enter Marks: ";
+    cin >> s[n].marks;
+    n++;
+    cout << "Student added successfully!\n";
+}
 
-    // a. Insert a new student at a given position (0-based)
-    void insertStudent(int position, int rollNo, const std::string& name, double cgpa) {
-        if (count >= capacity) {
-            std::cout << "Database Full! Cannot insert student.\n";
-            return;
+// Function to delete a student by Roll No
+void deleteStudent() {
+    if (n == 0) {
+        cout << "No students to delete!\n";
+        return;
+    }
+    int roll, found = -1;
+    cout << "Enter Roll No to delete: ";
+    cin >> roll;
+
+    for (int i = 0; i < n; i++) {
+        if (s[i].roll == roll) {
+            found = i;
+            break;
         }
-        if (position < 0 || position > count) {
-            std::cout << "Invalid position! Allowed: 0 to " << count << ".\n";
-            return;
-        }
-
-        // Check for duplicate roll number
-        for (int i = 0; i < count; ++i) {
-            if (students[i].rollNo == rollNo) {
-                std::cout << "Error: Student with Roll No " << rollNo << " already exists!\n";
-                return;
-            }
-        }
-
-        for (int i = count; i > position; --i) {
-            students[i] = students[i - 1];
-        }
-
-        students[position] = {rollNo, name, cgpa};
-        count++;
-        std::cout << "Successfully inserted student [" << name << "] at position " << position << ".\n";
     }
 
-    // b. Delete a student by roll number
-    void deleteStudentByRollNo(int rollNo) {
-        int index = -1;
-        for (int i = 0; i < count; ++i) {
-            if (students[i].rollNo == rollNo) {
-                index = i;
-                break;
-            }
-        }
+    if (found == -1) {
+        cout << "Student not found!\n";
+        return;
+    }
 
-        if (index == -1) {
-            std::cout << "Student with Roll No " << rollNo << " not found!\n";
+    // Shift elements to the left
+    for (int i = found; i < n - 1; i++) {
+        s[i] = s[i + 1];
+    }
+    n--;
+    cout << "Student deleted successfully!\n";
+}
+
+// Function to search a student by Roll No
+void searchStudent() {
+    if (n == 0) {
+        cout << "List is empty!\n";
+        return;
+    }
+    int roll;
+    cout << "Enter Roll No to search: ";
+    cin >> roll;
+
+    for (int i = 0; i < n; i++) {
+        if (s[i].roll == roll) {
+            cout << "Found! Name: " << s[i].name << ", Marks: " << s[i].marks << "\n";
             return;
         }
-
-        std::string deletedName = students[index].name;
-        for (int i = index; i < count - 1; ++i) {
-            students[i] = students[i + 1];
-        }
-        count--;
-        std::cout << "Successfully deleted student [" << deletedName << ", Roll: " << rollNo << "].\n";
     }
+    cout << "Student not found!\n";
+}
 
-    // c. Search a student by roll number and display record
-    void searchStudentByRollNo(int rollNo) const {
-        for (int i = 0; i < count; ++i) {
-            if (students[i].rollNo == rollNo) {
-                std::cout << "\n--- Student Record Found ---\n";
-                std::cout << "Index:    " << i << "\n";
-                std::cout << "Roll No:  " << students[i].rollNo << "\n";
-                std::cout << "Name:     " << students[i].name << "\n";
-                std::cout << "CGPA:     " << std::fixed << std::setprecision(2) << students[i].cgpa << "\n";
-                return;
-            }
-        }
-        std::cout << "Student with Roll No " << rollNo << " was not found.\n";
+// Function to display all students
+void display() {
+    if (n == 0) {
+        cout << "No students in the list!\n";
+        return;
     }
-
-    // d. Display all students stored in the array
-    void displayAll() const {
-        if (count == 0) {
-            std::cout << "No student records available.\n";
-            return;
-        }
-
-        std::cout << "\n============================================================\n";
-        std::cout << std::left << std::setw(8) << "Pos" 
-                  << std::setw(12) << "Roll No" 
-                  << std::setw(25) << "Student Name" 
-                  << std::setw(10) << "CGPA" << "\n";
-        std::cout << "------------------------------------------------------------\n";
-        for (int i = 0; i < count; ++i) {
-            std::cout << std::left << std::setw(8) << i
-                      << std::setw(12) << students[i].rollNo
-                      << std::setw(25) << students[i].name
-                      << std::fixed << std::setprecision(2) << std::setw(10) << students[i].cgpa << "\n";
-        }
-        std::cout << "============================================================\n";
-        std::cout << "Total Students: " << count << "\n\n";
+    cout << "\n--- Student Records ---\n";
+    cout << "Roll\tName\tMarks\n";
+    for (int i = 0; i < n; i++) {
+        cout << s[i].roll << "\t" << s[i].name << "\t" << s[i].marks << "\n";
     }
-};
+}
 
 int main() {
-    StudentInfoSystem sis;
+    int choice;
+    do {
+        cout << "\n--- Student Database Menu ---\n";
+        cout << "1. Insert Student\n";
+        cout << "2. Delete Student\n";
+        cout << "3. Search Student\n";
+        cout << "4. Display All\n";
+        cout << "5. Exit\n";
+        cout << "Enter your choice: ";
+        cin >> choice;
 
-    std::cout << "=== Student Information System (Array Based) ===\n";
-    // a. Insert students
-    sis.insertStudent(0, 101, "Aarav Sharma", 8.92);
-    sis.insertStudent(1, 102, "Bhavna Patel", 9.15);
-    sis.insertStudent(2, 104, "Devansh Joshi", 7.85);
-    sis.insertStudent(2, 103, "Chirag Verma", 8.45); // insert at position 2
-
-    // d. Display all
-    sis.displayAll();
-
-    // c. Search by roll number
-    sis.searchStudentByRollNo(103);
-    sis.searchStudentByRollNo(999);
-
-    // b. Delete student by roll number
-    sis.deleteStudentByRollNo(102);
-
-    // d. Display updated list
-    sis.displayAll();
+        switch (choice) {
+            case 1: insertStudent(); break;
+            case 2: deleteStudent(); break;
+            case 3: searchStudent(); break;
+            case 4: display(); break;
+            case 5: cout << "Exiting...\n"; break;
+            default: cout << "Invalid choice!\n";
+        }
+    } while (choice != 5);
 
     return 0;
 }
