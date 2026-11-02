@@ -1,11 +1,12 @@
-// Set 07 - Patient Daily Check-up Status using Singly Linked List
-// Maintain the daily check-up status of a patient
-// (C = Completed / M = Missed) using a singly
-// linked list. Write functions to:
-// a. Insert a status at the end of the list
-// b. Update the status of a given day
-// c. Calculate the total number of completed check-ups
-// d. Display the complete status list
+// Title: Set 07 - Patient Daily Check-up Status using Singly Linked List
+// Problem Statement:
+//   Maintain the daily check-up status of a patient
+//   (C = Completed / M = Missed) using a singly
+//   linked list. Write functions to:
+//   a. Insert a status at the end of the list
+//   b. Update the status of a given day
+//   c. Calculate the total number of completed check-ups
+//   d. Display the complete status list
 
 #include <iostream>
 using namespace std;

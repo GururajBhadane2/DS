@@ -1,10 +1,11 @@
-// Set 57 - Hospital Patient Records: Binary Search vs Linear Search
-// Maintain hospital patient records (Patient
-// ID, Name, Age). Write functions to:
-// a. Read N patients and sort them by Patient ID
-// b. Search a patient using binary search
-// c. Display the record if found
-// d. Display the number of comparisons and compare it with linear search on the same data
+// Title: Set 57 - Hospital Patient Records: Binary Search vs Linear Search
+// Problem Statement:
+//   Maintain hospital patient records (Patient
+//   ID, Name, Age). Write functions to:
+//   a. Read N patients and sort them by Patient ID
+//   b. Search a patient using binary search
+//   c. Display the record if found
+//   d. Display the number of comparisons and compare it with linear search on the same data
 
 #include <iostream>
 #include <string>

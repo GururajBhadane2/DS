@@ -1,10 +1,11 @@
-// Set 52 - Warehouse Stock List Search with Batch Aggregation
-// Maintain the stock list of a warehouse (Item
-// Code, Item Name, Quantity). Write functions to:
-// a. Read N items (item codes may repeat across batches)
-// b. Search by Item Code using linear search
-// c. Display all batches with that Item Code
-// d. Display the total quantity available for that Item Code
+// Title: Set 52 - Warehouse Stock List Search with Batch Aggregation
+// Problem Statement:
+//   Maintain the stock list of a warehouse (Item
+//   Code, Item Name, Quantity). Write functions to:
+//   a. Read N items (item codes may repeat across batches)
+//   b. Search by Item Code using linear search
+//   c. Display all batches with that Item Code
+//   d. Display the total quantity available for that Item Code
 
 #include <iostream>
 #include <string>

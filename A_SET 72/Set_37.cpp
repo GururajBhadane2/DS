@@ -1,12 +1,13 @@
-// Set 37 - Interest Calculation Formula (Infix to Postfix & Evaluation)
-// Given an interest calculation formula in
-// infix form (for example,
-// (Principal * Rate * Time)
-// / 100
-// ),
-// write a program to:
-// a. Convert the infix expression to postfix
-// b. Evaluate the postfix expression for given inputs
+// Title: Set 37 - Interest Calculation Formula (Infix to Postfix & Evaluation)
+// Problem Statement:
+//   Given an interest calculation formula in
+//   infix form (for example,
+//   (Principal * Rate * Time)
+//   / 100
+//   ),
+//   write a program to:
+//   a. Convert the infix expression to postfix
+//   b. Evaluate the postfix expression for given inputs
 
 #include <iostream>
 using namespace std;

@@ -1,11 +1,12 @@
-// Set 02 - Daily Return Status of Issued Books using Singly Linked List
-// Maintain the daily return status of issued
-// books (R = Returned / N = Not returned) using a singly
-// linked list. Write functions to:
-// a. Insert a status (R/N) at the end of the list
-// b. Update the status of a given day
-// c. Calculate the total number of returned books
-// d. Display the complete status list
+// Title: Set 02 - Daily Return Status of Issued Books using Singly Linked List
+// Problem Statement:
+//   Maintain the daily return status of issued
+//   books (R = Returned / N = Not returned) using a singly
+//   linked list. Write functions to:
+//   a. Insert a status (R/N) at the end of the list
+//   b. Update the status of a given day
+//   c. Calculate the total number of returned books
+//   d. Display the complete status list
 
 #include <iostream>
 using namespace std;

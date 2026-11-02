@@ -1,10 +1,11 @@
-// Set 30 - Hospital OPD Queue Simulation using Simple Queue
-// Simulate the OPD (outpatient department)
-// queue of a hospital.
-// a. Enqueue a patient's token number
-// b. Dequeue and display the patient being called
-// c. Display the front and rear token numbers
-// d. Display the complete queue
+// Title: Set 30 - Hospital OPD Queue Simulation using Simple Queue
+// Problem Statement:
+//   Simulate the OPD (outpatient department)
+//   queue of a hospital.
+//   a. Enqueue a patient's token number
+//   b. Dequeue and display the patient being called
+//   c. Display the front and rear token numbers
+//   d. Display the complete queue
 
 #include <iostream>
 using namespace std;

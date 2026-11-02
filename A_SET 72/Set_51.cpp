@@ -1,10 +1,11 @@
-// Set 51 - Phone Directory Search using Linear Search
-// Maintain a phone directory (Name, Phone Number,
-// City). Write functions to:
-// a. Read N contacts
-// b. Search a contact by Phone Number using linear search
-// c. Display the contact details
-// d. Display "Number not saved" if not found
+// Title: Set 51 - Phone Directory Search using Linear Search
+// Problem Statement:
+//   Maintain a phone directory (Name, Phone Number,
+//   City). Write functions to:
+//   a. Read N contacts
+//   b. Search a contact by Phone Number using linear search
+//   c. Display the contact details
+//   d. Display "Number not saved" if not found
 
 #include <iostream>
 #include <string>

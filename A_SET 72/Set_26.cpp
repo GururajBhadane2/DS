@@ -1,10 +1,11 @@
-// Set 26 - Hospital Patient Portal Navigation Stack
-// Simulate the page navigation history of a
-// hospital patient portal using a stack. Write functions to:
-// a. Visit a new page (push URL)
-// b. Go back to the previous page (pop URL)
-// c. Display the current page
-// d. Show the entire browsing history stack
+// Title: Set 26 - Hospital Patient Portal Navigation Stack
+// Problem Statement:
+//   Simulate the page navigation history of a
+//   hospital patient portal using a stack. Write functions to:
+//   a. Visit a new page (push URL)
+//   b. Go back to the previous page (pop URL)
+//   c. Display the current page
+//   d. Show the entire browsing history stack
 
 #include <iostream>
 #include <string>

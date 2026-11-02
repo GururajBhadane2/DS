@@ -1,10 +1,11 @@
-// Set 61 - Pin Code Directory Search using Binary Search
-// Maintain a list of Pin Codes (Pin Code, Area,
-// City). Write functions to:
-// a. Read N entries and sort them by Pin Code
-// b. Search a Pin Code using binary search
-// c. Display the area and city
-// d. Display the number of comparisons made
+// Title: Set 61 - Pin Code Directory Search using Binary Search
+// Problem Statement:
+//   Maintain a list of Pin Codes (Pin Code, Area,
+//   City). Write functions to:
+//   a. Read N entries and sort them by Pin Code
+//   b. Search a Pin Code using binary search
+//   c. Display the area and city
+//   d. Display the number of comparisons made
 
 #include <iostream>
 #include <string>

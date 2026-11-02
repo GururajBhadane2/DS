@@ -1,10 +1,11 @@
-// Set 25 - Library Book Issue Counter Queue Simulation
-// Simulate the book issue counter queue of
-// a library.
-// a. Enqueue a member's token number
-// b. Dequeue and display the member being served
-// c. Display the front and rear token numbers
-// d. Display the complete queue
+// Title: Set 25 - Library Book Issue Counter Queue Simulation
+// Problem Statement:
+//   Simulate the book issue counter queue of
+//   a library.
+//   a. Enqueue a member's token number
+//   b. Dequeue and display the member being served
+//   c. Display the front and rear token numbers
+//   d. Display the complete queue
 
 #include <iostream>
 using namespace std;

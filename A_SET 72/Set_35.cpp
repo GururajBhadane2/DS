@@ -1,9 +1,10 @@
-// Set 35 - Warehouse Goods Dispatch Queue Simulation
-// Simulate the goods dispatch queue of a warehouse.
-// a. Enqueue an order number
-// b. Dequeue and display the order being dispatched
-// c. Display the front and rear order numbers
-// d. Display the complete queue
+// Title: Set 35 - Warehouse Goods Dispatch Queue Simulation
+// Problem Statement:
+//   Simulate the goods dispatch queue of a warehouse.
+//   a. Enqueue an order number
+//   b. Dequeue and display the order being dispatched
+//   c. Display the front and rear order numbers
+//   d. Display the complete queue
 
 #include <iostream>
 using namespace std;

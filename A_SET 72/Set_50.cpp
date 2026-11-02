@@ -1,10 +1,11 @@
-// Set 50 - Railway Reservation List Search by PNR using Linear Search
-// Maintain a railway reservation list (PNR,
-// Passenger Name, Train No). Write functions to:
-// a. Read N reservations
-// b. Search by PNR using linear search
-// c. Display the booking details if found
-// d. Display the number of comparisons made
+// Title: Set 50 - Railway Reservation List Search by PNR using Linear Search
+// Problem Statement:
+//   Maintain a railway reservation list (PNR,
+//   Passenger Name, Train No). Write functions to:
+//   a. Read N reservations
+//   b. Search by PNR using linear search
+//   c. Display the booking details if found
+//   d. Display the number of comparisons made
 
 #include <iostream>
 #include <string>

@@ -1,10 +1,11 @@
-// Set 55 - Student Records Binary Search with Iteration Index Tracing
-// Maintain student records (Roll No, Name,
-// CGPA). Write functions to:
-// a. Read N records already sorted by Roll No
-// b. Search a student by Roll No using binary search (iterative)
-// c. Display the record if found
-// d. Display the low, mid, and high index at every step
+// Title: Set 55 - Student Records Binary Search with Iteration Index Tracing
+// Problem Statement:
+//   Maintain student records (Roll No, Name,
+//   CGPA). Write functions to:
+//   a. Read N records already sorted by Roll No
+//   b. Search a student by Roll No using binary search (iterative)
+//   c. Display the record if found
+//   d. Display the low, mid, and high index at every step
 
 #include <iostream>
 #include <string>

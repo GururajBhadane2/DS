@@ -1,10 +1,11 @@
-// Set 10 - Patient Body Temperatures using Array and Linked List
-// Store the body temperature readings of N
-// patients using both an array and a linked list.
-// Implement:
-// a. Insert the readings in both structures
-// b. Display the memory representation (index and nodes)
-// c. Count how many patients have a temperature above 100°F
+// Title: Set 10 - Patient Body Temperatures using Array and Linked List
+// Problem Statement:
+//   Store the body temperature readings of N
+//   patients using both an array and a linked list.
+//   Implement:
+//   a. Insert the readings in both structures
+//   b. Display the memory representation (index and nodes)
+//   c. Count how many patients have a temperature above 100°F
 
 #include <iostream>
 using namespace std;

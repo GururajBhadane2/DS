@@ -1,10 +1,11 @@
-// Set 29 - Hospital Billing System with Stack Evaluation
-// Write a program for the Hospital Billing
-// System to compute the final payable bill of a patient.
-// a. Read the bill formula in infix form as entered by the accountant
-// b. Convert the infix expression to postfix using a stack
-// c. Display the postfix expression after conversion
-// d. Accept values for Consultation, RoomCharge, Medicine, and Insurance from the user
+// Title: Set 29 - Hospital Billing System with Stack Evaluation
+// Problem Statement:
+//   Write a program for the Hospital Billing
+//   System to compute the final payable bill of a patient.
+//   a. Read the bill formula in infix form as entered by the accountant
+//   b. Convert the infix expression to postfix using a stack
+//   c. Display the postfix expression after conversion
+//   d. Accept values for Consultation, RoomCharge, Medicine, and Insurance from the user
 
 #include <iostream>
 #include <stack>

@@ -1,11 +1,12 @@
-// Set 19 - Loan Applicants Sorted by Application No using Doubly Linked List
-// Maintain a list of loan applicants sorted
-// by Application No using a doubly linked list. Write
-// functions to:
-// a. Insert an applicant so that the list remains sorted
-// b. Delete an applicant by Application No
-// c. Traverse forward and display all applicants
-// d. Traverse backward and display all applicants in reverse order
+// Title: Set 19 - Loan Applicants Sorted by Application No using Doubly Linked List
+// Problem Statement:
+//   Maintain a list of loan applicants sorted
+//   by Application No using a doubly linked list. Write
+//   functions to:
+//   a. Insert an applicant so that the list remains sorted
+//   b. Delete an applicant by Application No
+//   c. Traverse forward and display all applicants
+//   d. Traverse backward and display all applicants in reverse order
 
 #include <iostream>
 #include <string>

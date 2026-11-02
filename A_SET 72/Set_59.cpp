@@ -1,10 +1,11 @@
-// Set 59 - Employee Records Lookup with Step Counting using Binary Search
-// Maintain employee records (Employee ID, Name,
-// Salary). Write functions to:
-// a. Read N employees and sort them by Employee ID
-// b. Search an employee using binary search
-// c. Display the record if found
-// d. Display the number of steps taken
+// Title: Set 59 - Employee Records Lookup with Step Counting using Binary Search
+// Problem Statement:
+//   Maintain employee records (Employee ID, Name,
+//   Salary). Write functions to:
+//   a. Read N employees and sort them by Employee ID
+//   b. Search an employee using binary search
+//   c. Display the record if found
+//   d. Display the number of steps taken
 
 #include <iostream>
 #include <string>

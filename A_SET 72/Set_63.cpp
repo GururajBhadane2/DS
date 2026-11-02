@@ -1,10 +1,11 @@
-// Set 63 - Cinema Ticket Booking Counter Queue Simulation
-// Simulate the ticket booking counter of a cinema using a simple queue (array based). Write
-// functions to:
-// a. Enqueue a customer's token number (display "Queue Overflow" if full)
-// b. Dequeue a customer when served (display "Queue Underflow" if empty)
-// c. Display the front and rear token numbers
-// d. Display the complete queue
+// Title: Set 63 - Cinema Ticket Booking Counter Queue Simulation
+// Problem Statement:
+//   Simulate the ticket booking counter of a cinema using a simple queue (array based). Write
+//   functions to:
+//   a. Enqueue a customer's token number (display "Queue Overflow" if full)
+//   b. Dequeue a customer when served (display "Queue Underflow" if empty)
+//   c. Display the front and rear token numbers
+//   d. Display the complete queue
 
 #include <iostream>
 using namespace std;

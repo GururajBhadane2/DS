@@ -1,10 +1,11 @@
-// Set 64 - Bank Teller Counter Queue with Waiting Count Simulation
-// Simulate the teller counter of a bank using
-// a simple queue. Write functions to:
-// a. Enqueue a customer's token number
-// b. Dequeue and display the customer being served
-// c. Display the front and rear token numbers
-// d. Display the number of customers waiting
+// Title: Set 64 - Bank Teller Counter Queue with Waiting Count Simulation
+// Problem Statement:
+//   Simulate the teller counter of a bank using
+//   a simple queue. Write functions to:
+//   a. Enqueue a customer's token number
+//   b. Dequeue and display the customer being served
+//   c. Display the front and rear token numbers
+//   d. Display the number of customers waiting
 
 #include <iostream>
 using namespace std;

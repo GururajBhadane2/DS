@@ -1,9 +1,10 @@
-// Set 20 - Customer Account Balances using Array and Linked List
-// Store the account balances of N customers
-// using both an array and a linked list. Implement:
-// a. Insert the balances in both structures
-// b. Display the memory representation (index and nodes)
-// c. Count how many customers have a balance above ₹50,000
+// Title: Set 20 - Customer Account Balances using Array and Linked List
+// Problem Statement:
+//   Store the account balances of N customers
+//   using both an array and a linked list. Implement:
+//   a. Insert the balances in both structures
+//   b. Display the memory representation (index and nodes)
+//   c. Count how many customers have a balance above ₹50,000
 
 #include <iostream>
 using namespace std;

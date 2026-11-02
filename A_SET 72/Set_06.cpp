@@ -1,9 +1,10 @@
-// Set 06 - Maintain Patient Records using Array
-// Maintain the records of N patients (Patient ID, Name, Age) using an array. Write functions to:
-// a. Insert a new patient at a given position
-// b. Delete a patient by Patient ID
-// c. Search a patient by Patient ID and display the record
-// d. Display all patients
+// Title: Set 06 - Maintain Patient Records using Array
+// Problem Statement:
+//   Maintain the records of N patients (Patient ID, Name, Age) using an array. Write functions to:
+//   a. Insert a new patient at a given position
+//   b. Delete a patient by Patient ID
+//   c. Search a patient by Patient ID and display the record
+//   d. Display all patients
 
 #include <iostream>
 #include <string>

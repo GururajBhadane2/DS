@@ -1,11 +1,12 @@
-// Set 36 - Internet Banking Portal Navigation Stack
-// Simulate the page navigation history of an
-// internet banking portal using a stack. Write functions
-// to:
-// a. Visit a new page (push URL)
-// b. Go back to the previous page (pop URL)
-// c. Display the current page
-// d. Show the entire browsing history stack
+// Title: Set 36 - Internet Banking Portal Navigation Stack
+// Problem Statement:
+//   Simulate the page navigation history of an
+//   internet banking portal using a stack. Write functions
+//   to:
+//   a. Visit a new page (push URL)
+//   b. Go back to the previous page (pop URL)
+//   c. Display the current page
+//   d. Show the entire browsing history stack
 
 #include <iostream>
 #include <string>

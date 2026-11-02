@@ -1,11 +1,12 @@
-// Set 32 - Warehouse Price Formula (Infix to Postfix & Evaluation)
-// Given a price calculation formula in infix
-// form (for example,
-// (Cost * Qty) + Shipping - Discount
-// ),
-// write a program to:
-// a. Convert the infix expression to postfix
-// b. Evaluate the postfix expression for given inputs
+// Title: Set 32 - Warehouse Price Formula (Infix to Postfix & Evaluation)
+// Problem Statement:
+//   Given a price calculation formula in infix
+//   form (for example,
+//   (Cost * Qty) + Shipping - Discount
+//   ),
+//   write a program to:
+//   a. Convert the infix expression to postfix
+//   b. Evaluate the postfix expression for given inputs
 
 #include <iostream>
 #include <stack>

@@ -1,10 +1,11 @@
-// Set 33 - Amazon Warehouse Dispatch Processing using Stack
-// Simulate the dispatch processing of an Amazon warehouse using a stack.
-// Each parcel has a Parcel ID, Item Name, and Weight. Write functions to:
-// a. Push a newly arrived parcel onto the stack (display "Stack Overflow" if full)
-// b. Pop the parcel when dispatched and display its details (display "Stack Underflow" if empty)
-// c. Peek and display the top parcel ready for dispatch
-// d. Display all parcels currently in the stack
+// Title: Set 33 - Amazon Warehouse Dispatch Processing using Stack
+// Problem Statement:
+//   Simulate the dispatch processing of an Amazon warehouse using a stack.
+//   Each parcel has a Parcel ID, Item Name, and Weight. Write functions to:
+//   a. Push a newly arrived parcel onto the stack (display "Stack Overflow" if full)
+//   b. Pop the parcel when dispatched and display its details (display "Stack Underflow" if empty)
+//   c. Peek and display the top parcel ready for dispatch
+//   d. Display all parcels currently in the stack
 
 #include <iostream>
 #include <string>

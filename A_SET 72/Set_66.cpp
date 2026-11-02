@@ -1,10 +1,11 @@
-// Set 66 - Hospital OPD Queue with Full & Empty Boundary Checks
-// Simulate the OPD queue of a hospital using
-// a simple queue. Write functions to:
-// a. Enqueue a patient's token number
-// b. Dequeue and display the patient being called
-// c. Check whether the queue is empty or full
-// d. Display the complete queue
+// Title: Set 66 - Hospital OPD Queue with Full & Empty Boundary Checks
+// Problem Statement:
+//   Simulate the OPD queue of a hospital using
+//   a simple queue. Write functions to:
+//   a. Enqueue a patient's token number
+//   b. Dequeue and display the patient being called
+//   c. Check whether the queue is empty or full
+//   d. Display the complete queue
 
 #include <iostream>
 using namespace std;

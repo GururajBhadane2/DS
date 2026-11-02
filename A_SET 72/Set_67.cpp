@@ -1,10 +1,11 @@
-// Set 67 - Airline Check-in Counter Queue Simulation
-// Simulate the check-in counter of an airline
-// using a simple queue. Each passenger has a Ticket No
-// and Name. Write functions to:
-// a. Enqueue a passenger       b. Dequeue and display the passenger being checked in
-// c. Display the first and last passenger in the queue
-// d. Display the complete queue
+// Title: Set 67 - Airline Check-in Counter Queue Simulation
+// Problem Statement:
+//   Simulate the check-in counter of an airline
+//   using a simple queue. Each passenger has a Ticket No
+//   and Name. Write functions to:
+//   a. Enqueue a passenger       b. Dequeue and display the passenger being checked in
+//   c. Display the first and last passenger in the queue
+//   d. Display the complete queue
 
 #include <iostream>
 #include <string>

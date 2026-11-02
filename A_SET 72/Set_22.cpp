@@ -1,11 +1,12 @@
-// Set 22 - Late-Fine Formula Calculation (Infix to Postfix & Evaluation)
-// Given a late-fine calculation formula in
-// infix form (for example,
-// (Days * Rate) + Fixed - Waiver
-// ),
-// write a program to:
-// a. Convert the infix expression to postfix
-// b. Evaluate the postfix expression for given inputs
+// Title: Set 22 - Late-Fine Formula Calculation (Infix to Postfix & Evaluation)
+// Problem Statement:
+//   Given a late-fine calculation formula in
+//   infix form (for example,
+//   (Days * Rate) + Fixed - Waiver
+//   ),
+//   write a program to:
+//   a. Convert the infix expression to postfix
+//   b. Evaluate the postfix expression for given inputs
 
 #include <iostream>
 #include <stack>

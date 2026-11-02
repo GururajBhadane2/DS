@@ -1,10 +1,11 @@
-// Set 16 - Maintain Customer Bank Records using Array
-// Maintain the records of N customers (Account No, Name, Balance) using an array. Write
-// functions to:
-// a. Insert a new customer at a given position
-// b. Delete a customer by Account No
-// c. Search a customer by Account No and display the record
-// d. Display all customers
+// Title: Set 16 - Maintain Customer Bank Records using Array
+// Problem Statement:
+//   Maintain the records of N customers (Account No, Name, Balance) using an array. Write
+//   functions to:
+//   a. Insert a new customer at a given position
+//   b. Delete a customer by Account No
+//   c. Search a customer by Account No and display the record
+//   d. Display all customers
 
 #include <iostream>
 #include <string>

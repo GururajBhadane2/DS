@@ -1,10 +1,11 @@
-// Set 01 - Maintain Book Records using Array
-// Maintain the records of N books (Book ID,
-// Title, Price) using an array. Write functions to:
-// a. Insert a new book at a given position
-// b. Delete a book by Book ID
-// c. Search a book by Book ID and display the record
-// d. Display all books stored in the array
+// Title: Set 01 - Maintain Book Records using Array
+// Problem Statement:
+//   Maintain the records of N books (Book ID,
+//   Title, Price) using an array. Write functions to:
+//   a. Insert a new book at a given position
+//   b. Delete a book by Book ID
+//   c. Search a book by Book ID and display the record
+//   d. Display all books stored in the array
 
 #include <iostream>
 #include <string>

@@ -1,10 +1,11 @@
-// Set 14 - Suppliers List Sorted by Supplier ID using Doubly Linked List
-// Maintain a list of suppliers sorted by Supplier
-// ID using a doubly linked list. Write functions to:
-// a. Insert a supplier so that the list remains sorted
-// b. Delete a supplier by Supplier ID
-// c. Traverse forward and display all suppliers
-// d. Traverse backward and display all suppliers in reverse order
+// Title: Set 14 - Suppliers List Sorted by Supplier ID using Doubly Linked List
+// Problem Statement:
+//   Maintain a list of suppliers sorted by Supplier
+//   ID using a doubly linked list. Write functions to:
+//   a. Insert a supplier so that the list remains sorted
+//   b. Delete a supplier by Supplier ID
+//   c. Traverse forward and display all suppliers
+//   d. Traverse backward and display all suppliers in reverse order
 
 #include <iostream>
 #include <string>

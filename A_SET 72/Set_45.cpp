@@ -1,11 +1,12 @@
-// Set 45 - Bank Transaction History Search using Linear Search
-// Maintain the transaction history of a bank
-// account (Transaction ID, Type, Amount). Write
-// functions to:
-// a. Read N transactions
-// b. Search for a transaction by Transaction ID using linear search
-// c. Display the position (index) and details of the transaction
-// d. Display "Transaction not found" if absent
+// Title: Set 45 - Bank Transaction History Search using Linear Search
+// Problem Statement:
+//   Maintain the transaction history of a bank
+//   account (Transaction ID, Type, Amount). Write
+//   functions to:
+//   a. Read N transactions
+//   b. Search for a transaction by Transaction ID using linear search
+//   c. Display the position (index) and details of the transaction
+//   d. Display "Transaction not found" if absent
 
 #include <iostream>
 #include <string>

@@ -1,9 +1,10 @@
-// Set 68 - Food Delivery App Order Processing Queue Simulation
-// Simulate the order processing of a food delivery app using a simple queue. Write functions to:
-// a. Enqueue a new order number
-// b. Dequeue and display the order being dispatched
-// c. Display the front and rear order numbers
-// d. Display all pending orders
+// Title: Set 68 - Food Delivery App Order Processing Queue Simulation
+// Problem Statement:
+//   Simulate the order processing of a food delivery app using a simple queue. Write functions to:
+//   a. Enqueue a new order number
+//   b. Dequeue and display the order being dispatched
+//   c. Display the front and rear order numbers
+//   d. Display all pending orders
 
 #include <iostream>
 using namespace std;

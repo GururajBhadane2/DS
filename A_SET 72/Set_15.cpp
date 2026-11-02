@@ -1,9 +1,10 @@
-// Set 15 - Monthly Product Sales Units using Array and Linked List
-// Store the monthly sales units of N products
-// using both an array and a linked list. Implement:
-// a. Insert the sales figures in both structures
-// b. Display the memory representation (index and nodes)
-// c. Count how many products sold more than 500 units
+// Title: Set 15 - Monthly Product Sales Units using Array and Linked List
+// Problem Statement:
+//   Store the monthly sales units of N products
+//   using both an array and a linked list. Implement:
+//   a. Insert the sales figures in both structures
+//   b. Display the memory representation (index and nodes)
+//   c. Count how many products sold more than 500 units
 
 #include <iostream>
 using namespace std;

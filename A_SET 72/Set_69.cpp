@@ -1,10 +1,11 @@
-// Set 69 - Customer Care Call Center Queue Simulation
-// Simulate the call queue of a customer care
-// centre using a simple queue. Write functions to:
-// a. Enqueue an incoming call ID
-// b. Dequeue and display the call being answered
-// c. Display the number of calls waiting
-// d. Display the complete queue
+// Title: Set 69 - Customer Care Call Center Queue Simulation
+// Problem Statement:
+//   Simulate the call queue of a customer care
+//   centre using a simple queue. Write functions to:
+//   a. Enqueue an incoming call ID
+//   b. Dequeue and display the call being answered
+//   c. Display the number of calls waiting
+//   d. Display the complete queue
 
 #include <iostream>
 using namespace std;

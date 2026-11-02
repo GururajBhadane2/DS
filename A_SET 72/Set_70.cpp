@@ -1,11 +1,12 @@
-// Set 70 - Software Support Ticket Resolution Queue Simulation
-// Simulate the support ticket system of a software
-// company using a simple queue. Each ticket has
-// a Ticket ID and Issue Type. Write functions to:
-// a. Enqueue a new ticket
-// b. Dequeue and display the ticket being resolved
-// c. Display the front and rear tickets
-// d. Display the complete queue
+// Title: Set 70 - Software Support Ticket Resolution Queue Simulation
+// Problem Statement:
+//   Simulate the support ticket system of a software
+//   company using a simple queue. Each ticket has
+//   a Ticket ID and Issue Type. Write functions to:
+//   a. Enqueue a new ticket
+//   b. Dequeue and display the ticket being resolved
+//   c. Display the front and rear tickets
+//   d. Display the complete queue
 
 #include <iostream>
 #include <string>

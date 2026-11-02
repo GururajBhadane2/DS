@@ -1,10 +1,11 @@
-// Set 56 - Library Book Records Search using Recursive Binary Search
-// Maintain library records (Book ID, Title,
-// Copies). Write functions to:
-// a. Read N books and sort them by Book ID
-// b. Search a book using binary search (recursive)
-// c. Display the record if found
-// d. Display the number of recursive calls made
+// Title: Set 56 - Library Book Records Search using Recursive Binary Search
+// Problem Statement:
+//   Maintain library records (Book ID, Title,
+//   Copies). Write functions to:
+//   a. Read N books and sort them by Book ID
+//   b. Search a book using binary search (recursive)
+//   c. Display the record if found
+//   d. Display the number of recursive calls made
 
 #include <iostream>
 #include <string>

@@ -1,9 +1,10 @@
-// Set 42 - Employee Department Directory using Linear Search
-// Maintain an employee department directory (Employee ID, Name, Department). Write functions to:
-// a. Read N employee records into an array
-// b. Search for an employee by Name using linear search
-// c. Display all employee details matching the given Department
-// d. Display the total number of comparisons made during the search
+// Title: Set 42 - Employee Department Directory using Linear Search
+// Problem Statement:
+//   Maintain an employee department directory (Employee ID, Name, Department). Write functions to:
+//   a. Read N employee records into an array
+//   b. Search for an employee by Name using linear search
+//   c. Display all employee details matching the given Department
+//   d. Display the total number of comparisons made during the search
 
 #include <iostream>
 #include <string>

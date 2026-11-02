@@ -1,12 +1,13 @@
-// Set 27 - Hospital Bill Formula (Infix to Postfix & Evaluation)
-// Given a bill calculation formula in infix
-// form (for example,
-// (Consultation + Medicine) * Days
-// -
-// Insurance
-// ), write a program to:
-// a. Convert the infix expression to postfix
-// b. Evaluate the postfix expression for given inputs
+// Title: Set 27 - Hospital Bill Formula (Infix to Postfix & Evaluation)
+// Problem Statement:
+//   Given a bill calculation formula in infix
+//   form (for example,
+//   (Consultation + Medicine) * Days
+//   -
+//   Insurance
+//   ), write a program to:
+//   a. Convert the infix expression to postfix
+//   b. Evaluate the postfix expression for given inputs
 
 #include <iostream>
 #include <stack>

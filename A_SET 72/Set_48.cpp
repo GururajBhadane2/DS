@@ -1,9 +1,10 @@
-// Set 48 - Student Marks List Search & Frequency Counter
-// Maintain the marks list of N students (Roll No, Name, Marks). Write functions to:
-// a. Read the student records
-// b. Search a student by Roll No using linear search
-// c. Display the student's record
-// d. Count and display how many students scored the same marks as the student found
+// Title: Set 48 - Student Marks List Search & Frequency Counter
+// Problem Statement:
+//   Maintain the marks list of N students (Roll No, Name, Marks). Write functions to:
+//   a. Read the student records
+//   b. Search a student by Roll No using linear search
+//   c. Display the student's record
+//   d. Count and display how many students scored the same marks as the student found
 
 #include <iostream>
 #include <string>

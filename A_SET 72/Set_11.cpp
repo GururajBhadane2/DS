@@ -1,10 +1,11 @@
-// Set 11 - Maintain Product Records using Array
-// Maintain the records of N products (Product ID, Name, Quantity) using an array. Write functions
-// to:
-// a. Insert a new product at a given position
-// b. Delete a product by Product ID
-// c. Search a product by Product ID and display the record
-// d. Display all products
+// Title: Set 11 - Maintain Product Records using Array
+// Problem Statement:
+//   Maintain the records of N products (Product ID, Name, Quantity) using an array. Write functions
+//   to:
+//   a. Insert a new product at a given position
+//   b. Delete a product by Product ID
+//   c. Search a product by Product ID and display the record
+//   d. Display all products
 
 #include <iostream>
 #include <string>

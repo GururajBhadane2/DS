@@ -1,11 +1,12 @@
-// Set 65 - College Lab Print Queue Simulation with Page Counting
-// Simulate the print queue of a college lab
-// using a simple queue. Each job has a Job ID and
-// Number of Pages. Write functions to:
-// a. Add a print job to the queue
-// b. Remove and display the job being printed
-// c. Display the job at the front
-// d. Display all pending jobs and the total pages pending
+// Title: Set 65 - College Lab Print Queue Simulation with Page Counting
+// Problem Statement:
+//   Simulate the print queue of a college lab
+//   using a simple queue. Each job has a Job ID and
+//   Number of Pages. Write functions to:
+//   a. Add a print job to the queue
+//   b. Remove and display the job being printed
+//   c. Display the job at the front
+//   d. Display all pending jobs and the total pages pending
 
 #include <iostream>
 using namespace std;
