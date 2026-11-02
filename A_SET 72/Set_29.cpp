@@ -1,15 +1,10 @@
-/*
-================================================================================
-Title: Set 29 - Hospital Billing System with Stack Evaluation
-Problem Statement:
-  Write a program for the Hospital Billing
-  System to compute the final payable bill of a patient.
-  a. Read the bill formula in infix form as entered by the accountant
-  b. Convert the infix expression to postfix using a stack
-  c. Display the postfix expression after conversion
-  d. Accept values for Consultation, RoomCharge, Medicine, and Insurance from the user
-================================================================================
-*/
+// Set 29 - Hospital Billing System with Stack Evaluation
+// Write a program for the Hospital Billing
+// System to compute the final payable bill of a patient.
+// a. Read the bill formula in infix form as entered by the accountant
+// b. Convert the infix expression to postfix using a stack
+// c. Display the postfix expression after conversion
+// d. Accept values for Consultation, RoomCharge, Medicine, and Insurance from the user
 
 #include <iostream>
 #include <stack>
@@ -17,9 +12,6 @@ Problem Statement:
 using namespace std;
 
 int main() {
-        cout << "=====================================================\n";
-    cout << "  SET 29: Hospital Billing System with Stack Evaluation\n";
-    cout << "=====================================================\n";
 cout << "--- Set 29: Hospital Billing System ---\n";
     string infix = "(C+R+M)-I";
     cout << "Bill Formula: " << infix << "\n";

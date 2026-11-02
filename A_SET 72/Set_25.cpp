@@ -1,15 +1,10 @@
-/*
-================================================================================
-Title: Set 25 - Library Book Issue Counter Queue Simulation
-Problem Statement:
-  Simulate the book issue counter queue of
-  a library.
-  a. Enqueue a member's token number
-  b. Dequeue and display the member being served
-  c. Display the front and rear token numbers
-  d. Display the complete queue
-================================================================================
-*/
+// Set 25 - Library Book Issue Counter Queue Simulation
+// Simulate the book issue counter queue of
+// a library.
+// a. Enqueue a member's token number
+// b. Dequeue and display the member being served
+// c. Display the front and rear token numbers
+// d. Display the complete queue
 
 #include <iostream>
 using namespace std;
@@ -46,9 +41,6 @@ void display() {
 }
 
 int main() {
-        cout << "=====================================================\n";
-    cout << "  SET 25: Library Book Issue Counter Queue Simulation\n";
-    cout << "=====================================================\n";
 int ch;
     do {
         cout << "\n--- Set 25: Library Issue Counter Queue ---\n";

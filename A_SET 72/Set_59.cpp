@@ -1,15 +1,10 @@
-/*
-================================================================================
-Title: Set 59 - Employee Records Lookup with Step Counting using Binary Search
-Problem Statement:
-  Maintain employee records (Employee ID, Name,
-  Salary). Write functions to:
-  a. Read N employees and sort them by Employee ID
-  b. Search an employee using binary search
-  c. Display the record if found
-  d. Display the number of steps taken
-================================================================================
-*/
+// Set 59 - Employee Records Lookup with Step Counting using Binary Search
+// Maintain employee records (Employee ID, Name,
+// Salary). Write functions to:
+// a. Read N employees and sort them by Employee ID
+// b. Search an employee using binary search
+// c. Display the record if found
+// d. Display the number of steps taken
 
 #include <iostream>
 #include <string>
@@ -22,9 +17,6 @@ struct Employee {
 };
 
 int main() {
-        cout << "=====================================================\n";
-    cout << "  SET 59: Employee Records Lookup with Step Counting using Binary Search\n";
-    cout << "=====================================================\n";
 int n;
     cout << "Enter number of employees: "; cin >> n;
     Employee arr[100];

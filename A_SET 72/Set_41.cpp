@@ -1,14 +1,9 @@
-/*
-================================================================================
-Title: Set 41 - Student Course Registration using Linear Search
-Problem Statement:
-  Maintain the student course registration list (Roll No, Name, Course). Write functions to:
-  a. Read N student course registration records into an array
-  b. Search for a student by Roll No using linear search
-  c. Display the registration details if found, otherwise display "Student not found"
-  d. Display the total number of comparisons made during the search
-================================================================================
-*/
+// Set 41 - Student Course Registration using Linear Search
+// Maintain the student course registration list (Roll No, Name, Course). Write functions to:
+// a. Read N student course registration records into an array
+// b. Search for a student by Roll No using linear search
+// c. Display the registration details if found, otherwise display "Student not found"
+// d. Display the total number of comparisons made during the search
 
 #include <iostream>
 #include <string>
@@ -21,9 +16,6 @@ struct Student {
 };
 
 int main() {
-        cout << "=====================================================\n";
-    cout << "  SET 41: Student Course Registration using Linear Search\n";
-    cout << "=====================================================\n";
 int n;
     cout << "Enter number of students: "; cin >> n;
     Student arr[100];

@@ -1,14 +1,9 @@
-/*
-================================================================================
-Title: Set 05 - Books Issued Count using Array and Linked List
-Problem Statement:
-  Store the number of books issued by N members
-  using both an array and a linked list. Implement:
-  a. Insert the count in both structures
-  b. Display the memory representation (index and nodes)
-  c. Count how many members issued more than 5 books
-================================================================================
-*/
+// Set 05 - Books Issued Count using Array and Linked List
+// Store the number of books issued by N members
+// using both an array and a linked list. Implement:
+// a. Insert the count in both structures
+// b. Display the memory representation (index and nodes)
+// c. Count how many members issued more than 5 books
 
 #include <iostream>
 using namespace std;
@@ -59,9 +54,6 @@ void countAboveFive() {
 }
 
 int main() {
-        cout << "=====================================================\n";
-    cout << "  SET 05: Books Issued Count using Array and Linked List\n";
-    cout << "=====================================================\n";
 int ch;
     do {
         cout << "\n--- Set 5: Books Issued Count (Array & LL) ---\n";

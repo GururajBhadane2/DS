@@ -16,10 +16,8 @@ struct Student {
 Student records[MAX];
 int n = 0; // Number of records currently in the array
 
-// ==========================================
 // 1. INSERTION OPERATION
 // Inserts a record at a given position (0 to n)
-// ==========================================
 void insertRecord() {
   if (n >= MAX) {
     cout << "Array is Full! (Overflow)\n";
@@ -55,10 +53,8 @@ void insertRecord() {
   cout << "Record inserted successfully at position " << pos << "!\n";
 }
 
-// ==========================================
 // 2. DELETION OPERATION
 // Deletes a record by Roll Number
-// ==========================================
 void deleteRecord() {
   if (n == 0) {
     cout << "Array is Empty! (Underflow)\n";
@@ -94,10 +90,8 @@ void deleteRecord() {
   cout << "Deleted record of " << deletedName << " (Roll No " << roll << ")!\n";
 }
 
-// ==========================================
 // 3. SEARCH OPERATION
 // Searches for a record by Roll Number
-// ==========================================
 void searchRecord() {
   if (n == 0) {
     cout << "Array is empty!\n";
@@ -121,10 +115,8 @@ void searchRecord() {
   cout << "Record with Roll No " << roll << " not found!\n";
 }
 
-// ==========================================
 // 4. DISPLAY OPERATION
 // Displays all records in tabular format
-// ==========================================
 void displayRecords() {
   if (n == 0) {
     cout << "No records to display! Array is empty.\n";

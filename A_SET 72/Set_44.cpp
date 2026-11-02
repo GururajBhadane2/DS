@@ -1,15 +1,10 @@
-/*
-================================================================================
-Title: Set 44 - Hospital Patient Ward List Search with Duplicate Matching
-Problem Statement:
-  Maintain the records of N patients (Patient
-  ID, Name, Ward) in a hospital. Write functions to:
-  a. Read the patient records into an array
-  b. Search a patient by Name using linear search
-  c. Display all patients matching the given Name (names may repeat)
-  d. Display the total number of matches found
-================================================================================
-*/
+// Set 44 - Hospital Patient Ward List Search with Duplicate Matching
+// Maintain the records of N patients (Patient
+// ID, Name, Ward) in a hospital. Write functions to:
+// a. Read the patient records into an array
+// b. Search a patient by Name using linear search
+// c. Display all patients matching the given Name (names may repeat)
+// d. Display the total number of matches found
 
 #include <iostream>
 #include <string>
@@ -22,9 +17,6 @@ struct Patient {
 };
 
 int main() {
-        cout << "=====================================================\n";
-    cout << "  SET 44: Hospital Patient Ward List Search with Duplicate Matching\n";
-    cout << "=====================================================\n";
 int n;
     cout << "Enter number of patients: "; cin >> n;
     Patient arr[100];

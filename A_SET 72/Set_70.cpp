@@ -1,16 +1,11 @@
-/*
-================================================================================
-Title: Set 70 - Software Support Ticket Resolution Queue Simulation
-Problem Statement:
-  Simulate the support ticket system of a software
-  company using a simple queue. Each ticket has
-  a Ticket ID and Issue Type. Write functions to:
-  a. Enqueue a new ticket
-  b. Dequeue and display the ticket being resolved
-  c. Display the front and rear tickets
-  d. Display the complete queue
-================================================================================
-*/
+// Set 70 - Software Support Ticket Resolution Queue Simulation
+// Simulate the support ticket system of a software
+// company using a simple queue. Each ticket has
+// a Ticket ID and Issue Type. Write functions to:
+// a. Enqueue a new ticket
+// b. Dequeue and display the ticket being resolved
+// c. Display the front and rear tickets
+// d. Display the complete queue
 
 #include <iostream>
 #include <string>
@@ -54,9 +49,6 @@ void display() {
 }
 
 int main() {
-        cout << "=====================================================\n";
-    cout << "  SET 70: Software Support Ticket Resolution Queue Simulation\n";
-    cout << "=====================================================\n";
 int ch;
     do {
         cout << "\n--- Set 70: Support Ticket Queue ---\n1. Enqueue New Ticket\n2. Dequeue (Resolve Ticket)\n3. Display Front & Rear\n4. Display Complete Queue\n5. Exit\nEnter: ";

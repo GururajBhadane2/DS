@@ -1,16 +1,11 @@
-/*
-================================================================================
-Title: Set 22 - Late-Fine Formula Calculation (Infix to Postfix & Evaluation)
-Problem Statement:
-  Given a late-fine calculation formula in
-  infix form (for example,
-  (Days * Rate) + Fixed - Waiver
-  ),
-  write a program to:
-  a. Convert the infix expression to postfix
-  b. Evaluate the postfix expression for given inputs
-================================================================================
-*/
+// Set 22 - Late-Fine Formula Calculation (Infix to Postfix & Evaluation)
+// Given a late-fine calculation formula in
+// infix form (for example,
+// (Days * Rate) + Fixed - Waiver
+// ),
+// write a program to:
+// a. Convert the infix expression to postfix
+// b. Evaluate the postfix expression for given inputs
 
 #include <iostream>
 #include <stack>
@@ -48,9 +43,6 @@ float eval(float days, float rate, float fixed, float waiver) {
 }
 
 int main() {
-        cout << "=====================================================\n";
-    cout << "  SET 22: Late-Fine Formula Calculation (Infix to Postfix & Evaluation)\n";
-    cout << "=====================================================\n";
 string formula = "(D*R)+F-W";
     cout << "--- Set 22: Late Fine Formula ---\n";
     cout << "Infix Formula: " << formula << " where D=Days, R=Rate, F=Fixed, W=Waiver\n";

@@ -1,16 +1,11 @@
-/*
-================================================================================
-Title: Set 72 - Amazon Warehouse Order Packing Line Queue Simulation
-Problem Statement:
-  Simulate the order packing line of an Amazon
-  warehouse using a simple queue. Write functions
-  to:
-  a. Enqueue an order number for packing
-  b. Dequeue and display the order being packed
-  c. Display the front and rear order numbers
-  d. Display the complete queue and the count of orders waiting
-================================================================================
-*/
+// Set 72 - Amazon Warehouse Order Packing Line Queue Simulation
+// Simulate the order packing line of an Amazon
+// warehouse using a simple queue. Write functions
+// to:
+// a. Enqueue an order number for packing
+// b. Dequeue and display the order being packed
+// c. Display the front and rear order numbers
+// d. Display the complete queue and the count of orders waiting
 
 #include <iostream>
 using namespace std;
@@ -47,9 +42,6 @@ void display() {
 }
 
 int main() {
-        cout << "=====================================================\n";
-    cout << "  SET 72: Amazon Warehouse Order Packing Line Queue Simulation\n";
-    cout << "=====================================================\n";
 int ch;
     do {
         cout << "\n--- Set 72: Amazon Packing Line Queue ---\n1. Enqueue Order for Packing\n2. Dequeue (Pack Order)\n3. Front & Rear Orders\n4. Display Queue & Count Waiting\n5. Exit\nEnter: ";

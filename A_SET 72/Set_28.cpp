@@ -1,17 +1,12 @@
-/*
-================================================================================
-Title: Set 28 - Airline Flight Lookup System using Binary Search
-Problem Statement:
-  Simulate the flight lookup system of an airline
-  using binary search. Each flight record
-  has a Flight Number, Destination, and Departure Time. Write functions to:
-  a. Read the flight records of N flights and sort them by Flight Number in ascending order
-  b. Search for a flight by Flight Number using binary search
-  c. Display the full flight record if found, otherwise display “Flight not found”
-  d. Display the number of comparisons made during the search
-  .
-================================================================================
-*/
+// Set 28 - Airline Flight Lookup System using Binary Search
+// Simulate the flight lookup system of an airline
+// using binary search. Each flight record
+// has a Flight Number, Destination, and Departure Time. Write functions to:
+// a. Read the flight records of N flights and sort them by Flight Number in ascending order
+// b. Search for a flight by Flight Number using binary search
+// c. Display the full flight record if found, otherwise display “Flight not found”
+// d. Display the number of comparisons made during the search
+// .
 
 #include <iostream>
 #include <string>
@@ -59,9 +54,6 @@ void searchFlight(int target) {
 }
 
 int main() {
-        cout << "=====================================================\n";
-    cout << "  SET 28: Airline Flight Lookup System using Binary Search\n";
-    cout << "=====================================================\n";
 cout << "Enter number of flights: "; cin >> n;
     for (int i = 0; i < n; i++) {
         cout << "Enter Flight " << (i + 1) << " (No, Destination, DepartureTime): ";

@@ -1,15 +1,10 @@
-/*
-================================================================================
-Title: Set 55 - Student Records Binary Search with Iteration Index Tracing
-Problem Statement:
-  Maintain student records (Roll No, Name,
-  CGPA). Write functions to:
-  a. Read N records already sorted by Roll No
-  b. Search a student by Roll No using binary search (iterative)
-  c. Display the record if found
-  d. Display the low, mid, and high index at every step
-================================================================================
-*/
+// Set 55 - Student Records Binary Search with Iteration Index Tracing
+// Maintain student records (Roll No, Name,
+// CGPA). Write functions to:
+// a. Read N records already sorted by Roll No
+// b. Search a student by Roll No using binary search (iterative)
+// c. Display the record if found
+// d. Display the low, mid, and high index at every step
 
 #include <iostream>
 #include <string>
@@ -22,9 +17,6 @@ struct Student {
 };
 
 int main() {
-        cout << "=====================================================\n";
-    cout << "  SET 55: Student Records Binary Search with Iteration Index Tracing\n";
-    cout << "=====================================================\n";
 int n;
     cout << "Enter number of students (enter in sorted order of Roll No): "; cin >> n;
     Student arr[100];

@@ -1,15 +1,10 @@
-/*
-================================================================================
-Title: Set 03 - Book Return Status: Middle Insert & Front Delete using SLL
-Problem Statement:
-  Maintain the same daily return status list.
-  Write functions to:
-  a. Insert a status at the middle of the list
-  b. Delete a status by day from the front
-  c. Calculate the total number of books not returned
-  d. Display the complete list
-================================================================================
-*/
+// Set 03 - Book Return Status: Middle Insert & Front Delete using SLL
+// Maintain the same daily return status list.
+// Write functions to:
+// a. Insert a status at the middle of the list
+// b. Delete a status by day from the front
+// c. Calculate the total number of books not returned
+// d. Display the complete list
 
 #include <iostream>
 using namespace std;
@@ -73,9 +68,6 @@ void display() {
 }
 
 int main() {
-        cout << "=====================================================\n";
-    cout << "  SET 03: Book Return Status: Middle Insert & Front Delete using SLL\n";
-    cout << "=====================================================\n";
 int ch;
     do {
         cout << "\n--- Set 3: Book Return Status (Middle Insert / Front Delete) ---\n";

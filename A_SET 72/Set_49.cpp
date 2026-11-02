@@ -1,15 +1,10 @@
-/*
-================================================================================
-Title: Set 49 - Hotel Guest Register Search using Linear Search
-Problem Statement:
-  Maintain the guest register of a hotel (Room
-  No, Guest Name, Days Stayed). Write functions to:
-  a. Read N guest records
-  b. Search for a guest by Name using linear search
-  c. Display the room number and days stayed
-  d. Display the position of the match in the register
-================================================================================
-*/
+// Set 49 - Hotel Guest Register Search using Linear Search
+// Maintain the guest register of a hotel (Room
+// No, Guest Name, Days Stayed). Write functions to:
+// a. Read N guest records
+// b. Search for a guest by Name using linear search
+// c. Display the room number and days stayed
+// d. Display the position of the match in the register
 
 #include <iostream>
 #include <string>
@@ -22,9 +17,6 @@ struct Guest {
 };
 
 int main() {
-        cout << "=====================================================\n";
-    cout << "  SET 49: Hotel Guest Register Search using Linear Search\n";
-    cout << "=====================================================\n";
 int n;
     cout << "Enter number of guests: "; cin >> n;
     Guest arr[100];

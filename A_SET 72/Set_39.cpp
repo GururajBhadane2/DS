@@ -1,25 +1,17 @@
-/*
-================================================================================
-Title: Set 39 - Loan Billing System with Stack Evaluation
-Problem Statement:
-  Write a program for the Loan Billing System
-  to compute the final payable loan amount of a
-  customer.
-  a. Read the loan formula in infix form as entered by the bank officer
-  b. Convert the infix expression to postfix using a stack
-  c. Display the postfix expression after conversion
-  d. Accept values for Principal, Interest, ProcessingFee, and Rebate from the user
-================================================================================
-*/
+// Set 39 - Loan Billing System with Stack Evaluation
+// Write a program for the Loan Billing System
+// to compute the final payable loan amount of a
+// customer.
+// a. Read the loan formula in infix form as entered by the bank officer
+// b. Convert the infix expression to postfix using a stack
+// c. Display the postfix expression after conversion
+// d. Accept values for Principal, Interest, ProcessingFee, and Rebate from the user
 
 #include <iostream>
 #include <stack>
 using namespace std;
 
 int main() {
-        cout << "=====================================================\n";
-    cout << "  SET 39: Loan Billing System with Stack Evaluation\n";
-    cout << "=====================================================\n";
 cout << "--- Set 39: Loan Billing System ---\n";
     cout << "Formula: (Principal + Interest) + ProcessingFee - Rebate\n\n";
     float p, i, fee, r;

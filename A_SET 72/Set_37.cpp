@@ -1,25 +1,17 @@
-/*
-================================================================================
-Title: Set 37 - Interest Calculation Formula (Infix to Postfix & Evaluation)
-Problem Statement:
-  Given an interest calculation formula in
-  infix form (for example,
-  (Principal * Rate * Time)
-  / 100
-  ),
-  write a program to:
-  a. Convert the infix expression to postfix
-  b. Evaluate the postfix expression for given inputs
-================================================================================
-*/
+// Set 37 - Interest Calculation Formula (Infix to Postfix & Evaluation)
+// Given an interest calculation formula in
+// infix form (for example,
+// (Principal * Rate * Time)
+// / 100
+// ),
+// write a program to:
+// a. Convert the infix expression to postfix
+// b. Evaluate the postfix expression for given inputs
 
 #include <iostream>
 using namespace std;
 
 int main() {
-        cout << "=====================================================\n";
-    cout << "  SET 37: Interest Calculation Formula (Infix to Postfix & Evaluation)\n";
-    cout << "=====================================================\n";
 cout << "--- Set 37: Interest Calculation ---\n";
     cout << "Infix: (Principal * Rate * Time) / 100\n";
     cout << "Postfix: Principal Rate * Time * 100 /\n\n";

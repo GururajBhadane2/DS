@@ -1,15 +1,10 @@
-/*
-================================================================================
-Title: Set 43 - Flight Passenger List Search using Linear Search
-Problem Statement:
-  Maintain the passenger list of a flight (Ticket
-  No, Name, Seat No). Write functions to:
-  a. Read the records of N passengers
-  b. Search a passenger by Name using linear search
-  c. Display the record if found, otherwise display "Passenger not found"
-  d. Display the number of comparisons made
-================================================================================
-*/
+// Set 43 - Flight Passenger List Search using Linear Search
+// Maintain the passenger list of a flight (Ticket
+// No, Name, Seat No). Write functions to:
+// a. Read the records of N passengers
+// b. Search a passenger by Name using linear search
+// c. Display the record if found, otherwise display "Passenger not found"
+// d. Display the number of comparisons made
 
 #include <iostream>
 #include <string>
@@ -22,9 +17,6 @@ struct Passenger {
 };
 
 int main() {
-        cout << "=====================================================\n";
-    cout << "  SET 43: Flight Passenger List Search using Linear Search\n";
-    cout << "=====================================================\n";
 int n;
     cout << "Enter number of passengers: "; cin >> n;
     Passenger arr[100];

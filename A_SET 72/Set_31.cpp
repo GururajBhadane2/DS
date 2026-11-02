@@ -1,16 +1,11 @@
-/*
-================================================================================
-Title: Set 31 - Warehouse Management Portal Navigation Stack
-Problem Statement:
-  Simulate the page navigation history of a
-  warehouse management portal using a stack. Write
-  functions to:
-  a. Visit a new page (push URL)
-  b. Go back to the previous page (pop URL)
-  c. Display the current page
-  d. Show the entire browsing history stack
-================================================================================
-*/
+// Set 31 - Warehouse Management Portal Navigation Stack
+// Simulate the page navigation history of a
+// warehouse management portal using a stack. Write
+// functions to:
+// a. Visit a new page (push URL)
+// b. Go back to the previous page (pop URL)
+// c. Display the current page
+// d. Show the entire browsing history stack
 
 #include <iostream>
 #include <string>
@@ -38,9 +33,6 @@ void display() {
 }
 
 int main() {
-        cout << "=====================================================\n";
-    cout << "  SET 31: Warehouse Management Portal Navigation Stack\n";
-    cout << "=====================================================\n";
 visit("warehouse.corp/dashboard");
     int ch;
     do {

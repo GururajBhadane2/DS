@@ -1,15 +1,10 @@
-/*
-================================================================================
-Title: Set 54 - Bank Customer Records Lookup using Binary Search
-Problem Statement:
-  Maintain bank customer records (Account No,
-  Name, Balance). Write functions to:
-  a. Read N records and sort them by Account No
-  b. Search an account using binary search
-  c. Display the customer's record
-  d. Display "Account not found" if absent
-================================================================================
-*/
+// Set 54 - Bank Customer Records Lookup using Binary Search
+// Maintain bank customer records (Account No,
+// Name, Balance). Write functions to:
+// a. Read N records and sort them by Account No
+// b. Search an account using binary search
+// c. Display the customer's record
+// d. Display "Account not found" if absent
 
 #include <iostream>
 #include <string>
@@ -22,9 +17,6 @@ struct Customer {
 };
 
 int main() {
-        cout << "=====================================================\n";
-    cout << "  SET 54: Bank Customer Records Lookup using Binary Search\n";
-    cout << "=====================================================\n";
 int n;
     cout << "Enter number of customers: "; cin >> n;
     Customer arr[100];

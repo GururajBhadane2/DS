@@ -1,16 +1,11 @@
-/*
-================================================================================
-Title: Set 12 - Daily Product Stock Status using Singly Linked List
-Problem Statement:
-  Maintain the daily stock status of a product
-  (A = Available / O = Out of stock) using a singly
-  linked list. Write functions to:
-  a. Insert a status at the end of the list
-  b. Update the status of a given day
-  c. Calculate the total number of days the product was available
-  d. Display the complete status list
-================================================================================
-*/
+// Set 12 - Daily Product Stock Status using Singly Linked List
+// Maintain the daily stock status of a product
+// (A = Available / O = Out of stock) using a singly
+// linked list. Write functions to:
+// a. Insert a status at the end of the list
+// b. Update the status of a given day
+// c. Calculate the total number of days the product was available
+// d. Display the complete status list
 
 #include <iostream>
 using namespace std;
@@ -76,9 +71,6 @@ void display() {
 }
 
 int main() {
-        cout << "=====================================================\n";
-    cout << "  SET 12: Daily Product Stock Status using Singly Linked List\n";
-    cout << "=====================================================\n";
 int ch;
     do {
         cout << "\n--- Set 12: Daily Stock Status (SLL) ---\n";

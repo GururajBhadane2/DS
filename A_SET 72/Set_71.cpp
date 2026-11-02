@@ -1,15 +1,10 @@
-/*
-================================================================================
-Title: Set 71 - Railway Reservation Counter Queue with Overflow Alert
-Problem Statement:
-  Simulate the railway reservation counter
-  using a simple queue. Write functions to:
-  a. Enqueue a passenger's token number
-  b. Dequeue and display the passenger being served
-  c. Display "Queue Overflow" when the counter line is full
-  d. Display the complete queue
-================================================================================
-*/
+// Set 71 - Railway Reservation Counter Queue with Overflow Alert
+// Simulate the railway reservation counter
+// using a simple queue. Write functions to:
+// a. Enqueue a passenger's token number
+// b. Dequeue and display the passenger being served
+// c. Display "Queue Overflow" when the counter line is full
+// d. Display the complete queue
 
 #include <iostream>
 using namespace std;
@@ -41,9 +36,6 @@ void display() {
 }
 
 int main() {
-        cout << "=====================================================\n";
-    cout << "  SET 71: Railway Reservation Counter Queue with Overflow Alert\n";
-    cout << "=====================================================\n";
 int ch;
     do {
         cout << "\n--- Set 71: Railway Reservation Queue ---\n1. Enqueue Passenger\n2. Dequeue (Serve Passenger)\n3. Display Complete Queue\n4. Exit\nEnter: ";

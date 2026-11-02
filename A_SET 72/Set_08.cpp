@@ -1,14 +1,9 @@
-/*
-================================================================================
-Title: Set 08 - Patient Check-up Status: Middle Insert & Front Delete using SLL
-Problem Statement:
-  Using the same list, write functions to:
-  a. Insert a status at the middle of the list
-  b. Delete a status by day from the front
-  c. Calculate the total number of missed check-ups
-  d. Display the complete list
-================================================================================
-*/
+// Set 08 - Patient Check-up Status: Middle Insert & Front Delete using SLL
+// Using the same list, write functions to:
+// a. Insert a status at the middle of the list
+// b. Delete a status by day from the front
+// c. Calculate the total number of missed check-ups
+// d. Display the complete list
 
 #include <iostream>
 using namespace std;
@@ -72,9 +67,6 @@ void display() {
 }
 
 int main() {
-        cout << "=====================================================\n";
-    cout << "  SET 08: Patient Check-up Status: Middle Insert & Front Delete using SLL\n";
-    cout << "=====================================================\n";
 int ch;
     do {
         cout << "\n--- Set 8: Check-up Status (Middle Insert / Front Delete) ---\n";

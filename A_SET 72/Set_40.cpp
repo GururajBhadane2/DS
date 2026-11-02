@@ -1,14 +1,9 @@
-/*
-================================================================================
-Title: Set 40 - Bank Teller Counter Queue Simulation
-Problem Statement:
-  Simulate the teller counter queue of a bank.
-  a. Enqueue a customer's token number
-  b. Dequeue and display the customer being served
-  c. Display the front and rear token numbers
-  d. Display the complete queue
-================================================================================
-*/
+// Set 40 - Bank Teller Counter Queue Simulation
+// Simulate the teller counter queue of a bank.
+// a. Enqueue a customer's token number
+// b. Dequeue and display the customer being served
+// c. Display the front and rear token numbers
+// d. Display the complete queue
 
 #include <iostream>
 using namespace std;
@@ -33,9 +28,6 @@ void dequeue() {
 }
 
 int main() {
-        cout << "=====================================================\n";
-    cout << "  SET 40: Bank Teller Counter Queue Simulation\n";
-    cout << "=====================================================\n";
 int ch;
     do {
         cout << "\n1. Enqueue Customer\n2. Dequeue Customer\n3. Show Front/Rear\n4. Display\n5. Exit\nEnter: ";

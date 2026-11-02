@@ -1,15 +1,10 @@
-/*
-================================================================================
-Title: Set 60 - Hotel Room Directory Lookup using Binary Search
-Problem Statement:
-  Maintain hotel rooms (Room No, Type, Rate).
-  Write functions to:
-  a. Read N rooms sorted by Room No
-  b. Search a room using binary search
-  c. Display the room details and rate if found
-  d. Display "Room does not exist" otherwise
-================================================================================
-*/
+// Set 60 - Hotel Room Directory Lookup using Binary Search
+// Maintain hotel rooms (Room No, Type, Rate).
+// Write functions to:
+// a. Read N rooms sorted by Room No
+// b. Search a room using binary search
+// c. Display the room details and rate if found
+// d. Display "Room does not exist" otherwise
 
 #include <iostream>
 #include <string>
@@ -22,9 +17,6 @@ struct Room {
 };
 
 int main() {
-        cout << "=====================================================\n";
-    cout << "  SET 60: Hotel Room Directory Lookup using Binary Search\n";
-    cout << "=====================================================\n";
 int n;
     cout << "Enter number of rooms (sorted by room number): "; cin >> n;
     Room arr[100];

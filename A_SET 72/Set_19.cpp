@@ -1,16 +1,11 @@
-/*
-================================================================================
-Title: Set 19 - Loan Applicants Sorted by Application No using Doubly Linked List
-Problem Statement:
-  Maintain a list of loan applicants sorted
-  by Application No using a doubly linked list. Write
-  functions to:
-  a. Insert an applicant so that the list remains sorted
-  b. Delete an applicant by Application No
-  c. Traverse forward and display all applicants
-  d. Traverse backward and display all applicants in reverse order
-================================================================================
-*/
+// Set 19 - Loan Applicants Sorted by Application No using Doubly Linked List
+// Maintain a list of loan applicants sorted
+// by Application No using a doubly linked list. Write
+// functions to:
+// a. Insert an applicant so that the list remains sorted
+// b. Delete an applicant by Application No
+// c. Traverse forward and display all applicants
+// d. Traverse backward and display all applicants in reverse order
 
 #include <iostream>
 #include <string>
@@ -86,9 +81,6 @@ void traverseBackward() {
 }
 
 int main() {
-        cout << "=====================================================\n";
-    cout << "  SET 19: Loan Applicants Sorted by Application No using Doubly Linked List\n";
-    cout << "=====================================================\n";
 int ch;
     do {
         cout << "\n--- Set 19: Sorted Loan Applicants (DLL) ---\n";

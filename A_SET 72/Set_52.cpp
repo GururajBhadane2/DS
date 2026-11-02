@@ -1,15 +1,10 @@
-/*
-================================================================================
-Title: Set 52 - Warehouse Stock List Search with Batch Aggregation
-Problem Statement:
-  Maintain the stock list of a warehouse (Item
-  Code, Item Name, Quantity). Write functions to:
-  a. Read N items (item codes may repeat across batches)
-  b. Search by Item Code using linear search
-  c. Display all batches with that Item Code
-  d. Display the total quantity available for that Item Code
-================================================================================
-*/
+// Set 52 - Warehouse Stock List Search with Batch Aggregation
+// Maintain the stock list of a warehouse (Item
+// Code, Item Name, Quantity). Write functions to:
+// a. Read N items (item codes may repeat across batches)
+// b. Search by Item Code using linear search
+// c. Display all batches with that Item Code
+// d. Display the total quantity available for that Item Code
 
 #include <iostream>
 #include <string>
@@ -22,9 +17,6 @@ struct Batch {
 };
 
 int main() {
-        cout << "=====================================================\n";
-    cout << "  SET 52: Warehouse Stock List Search with Batch Aggregation\n";
-    cout << "=====================================================\n";
 int n;
     cout << "Enter number of batch items: "; cin >> n;
     Batch arr[100];

@@ -1,14 +1,9 @@
-/*
-================================================================================
-Title: Set 53 - Online Store Product Catalogue using Binary Search
-Problem Statement:
-  Maintain the product catalogue of an online store (Product ID, Name, Price). Write functions to:
-  a. Read N products and sort them by Product ID
-  b. Search a product by Product ID using binary search
-  c. Display the product details if found
-  d. Display the number of comparisons made
-================================================================================
-*/
+// Set 53 - Online Store Product Catalogue using Binary Search
+// Maintain the product catalogue of an online store (Product ID, Name, Price). Write functions to:
+// a. Read N products and sort them by Product ID
+// b. Search a product by Product ID using binary search
+// c. Display the product details if found
+// d. Display the number of comparisons made
 
 #include <iostream>
 #include <string>
@@ -21,9 +16,6 @@ struct Product {
 };
 
 int main() {
-        cout << "=====================================================\n";
-    cout << "  SET 53: Online Store Product Catalogue using Binary Search\n";
-    cout << "=====================================================\n";
 int n;
     cout << "Enter number of products: "; cin >> n;
     Product arr[100];

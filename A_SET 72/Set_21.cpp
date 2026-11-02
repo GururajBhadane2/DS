@@ -1,15 +1,10 @@
-/*
-================================================================================
-Title: Set 21 - Library Catalogue Page Navigation History using Stack
-Problem Statement:
-  Simulate the page navigation history of an online library catalogue using a stack. Write functions
-  to:
-  a. Visit a new page (push URL)
-  b. Go back to the previous page (pop URL)
-  c. Display the current page
-  d. Show the entire browsing history stack
-================================================================================
-*/
+// Set 21 - Library Catalogue Page Navigation History using Stack
+// Simulate the page navigation history of an online library catalogue using a stack. Write functions
+// to:
+// a. Visit a new page (push URL)
+// b. Go back to the previous page (pop URL)
+// c. Display the current page
+// d. Show the entire browsing history stack
 
 #include <iostream>
 #include <string>
@@ -43,9 +38,6 @@ void displayHistory() {
 }
 
 int main() {
-        cout << "=====================================================\n";
-    cout << "  SET 21: Library Catalogue Page Navigation History using Stack\n";
-    cout << "=====================================================\n";
 visit("lib.college.edu/home");
     int ch;
     do {

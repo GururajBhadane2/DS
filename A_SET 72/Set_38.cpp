@@ -1,14 +1,9 @@
-/*
-================================================================================
-Title: Set 38 - Bank Account Transaction Undo Stack Simulation
-Problem Statement:
-  Simulate the transaction history and Undo operation of a bank account using a stack. Write functions to:
-  a. Push a new transaction (Amount, Type: Deposit/Withdrawal) onto the stack
-  b. Undo (Pop) the last transaction and restore the previous balance
-  c. Display the most recent transaction (top of stack)
-  d. Display all past transactions in the stack
-================================================================================
-*/
+// Set 38 - Bank Account Transaction Undo Stack Simulation
+// Simulate the transaction history and Undo operation of a bank account using a stack. Write functions to:
+// a. Push a new transaction (Amount, Type: Deposit/Withdrawal) onto the stack
+// b. Undo (Pop) the last transaction and restore the previous balance
+// c. Display the most recent transaction (top of stack)
+// d. Display all past transactions in the stack
 
 #include <iostream>
 #include <string>
@@ -41,9 +36,6 @@ void undo() {
 }
 
 int main() {
-        cout << "=====================================================\n";
-    cout << "  SET 38: Bank Account Transaction Undo Stack Simulation\n";
-    cout << "=====================================================\n";
 int ch;
     do {
         cout << "\n1. Add Transaction\n2. Undo Last\n3. Display\n4. Exit\nEnter: "; cin >> ch;

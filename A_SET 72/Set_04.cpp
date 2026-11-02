@@ -1,16 +1,11 @@
-/*
-================================================================================
-Title: Set 04 - Library Members Sorted by Member ID using Doubly Linked List
-Problem Statement:
-  Maintain a list of library members sorted
-  by Member ID using a doubly linked list. Write
-  functions to:
-  a. Insert a member so that the list remains sorted
-  b. Delete a member by Member ID
-  c. Traverse forward and display all members
-  d. Traverse backward and display all members in reverse order
-================================================================================
-*/
+// Set 04 - Library Members Sorted by Member ID using Doubly Linked List
+// Maintain a list of library members sorted
+// by Member ID using a doubly linked list. Write
+// functions to:
+// a. Insert a member so that the list remains sorted
+// b. Delete a member by Member ID
+// c. Traverse forward and display all members
+// d. Traverse backward and display all members in reverse order
 
 #include <iostream>
 #include <string>
@@ -86,9 +81,6 @@ void traverseBackward() {
 }
 
 int main() {
-        cout << "=====================================================\n";
-    cout << "  SET 04: Library Members Sorted by Member ID using Doubly Linked List\n";
-    cout << "=====================================================\n";
 int ch;
     do {
         cout << "\n--- Set 4: Sorted Library Members (DLL) ---\n";

@@ -1,16 +1,11 @@
-/*
-================================================================================
-Title: Set 17 - Daily Loan EMI Payment Status using Singly Linked List
-Problem Statement:
-  Maintain the daily EMI payment status of
-  a loan (P = Paid / D = Due) using a singly linked list.
-  Write functions to:
-  a. Insert a status at the end of the list
-  b. Update the status of a given day
-  c. Calculate the total number of paid EMIs
-  d. Display the complete status list
-================================================================================
-*/
+// Set 17 - Daily Loan EMI Payment Status using Singly Linked List
+// Maintain the daily EMI payment status of
+// a loan (P = Paid / D = Due) using a singly linked list.
+// Write functions to:
+// a. Insert a status at the end of the list
+// b. Update the status of a given day
+// c. Calculate the total number of paid EMIs
+// d. Display the complete status list
 
 #include <iostream>
 using namespace std;
@@ -76,9 +71,6 @@ void display() {
 }
 
 int main() {
-        cout << "=====================================================\n";
-    cout << "  SET 17: Daily Loan EMI Payment Status using Singly Linked List\n";
-    cout << "=====================================================\n";
 int ch;
     do {
         cout << "\n--- Set 17: Daily EMI Status (SLL) ---\n";

@@ -1,15 +1,10 @@
-/*
-================================================================================
-Title: Set 56 - Library Book Records Search using Recursive Binary Search
-Problem Statement:
-  Maintain library records (Book ID, Title,
-  Copies). Write functions to:
-  a. Read N books and sort them by Book ID
-  b. Search a book using binary search (recursive)
-  c. Display the record if found
-  d. Display the number of recursive calls made
-================================================================================
-*/
+// Set 56 - Library Book Records Search using Recursive Binary Search
+// Maintain library records (Book ID, Title,
+// Copies). Write functions to:
+// a. Read N books and sort them by Book ID
+// b. Search a book using binary search (recursive)
+// c. Display the record if found
+// d. Display the number of recursive calls made
 
 #include <iostream>
 #include <string>
@@ -34,9 +29,6 @@ int recursiveBS(int low, int high, int target) {
 }
 
 int main() {
-        cout << "=====================================================\n";
-    cout << "  SET 56: Library Book Records Search using Recursive Binary Search\n";
-    cout << "=====================================================\n";
 int n;
     cout << "Enter number of books: "; cin >> n;
     for (int i = 0; i < n; i++) {

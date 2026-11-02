@@ -1,15 +1,10 @@
-/*
-================================================================================
-Title: Set 62 - Student Marks Binary Search: First & Last Occurrence
-Problem Statement:
-  Maintain a sorted list of student marks that
-  may contain duplicates. Write functions to:
-  a. Read N marks and sort them in ascending order
-  b. Find the first occurrence of a given mark using binary search
-  c. Find the last occurrence of the same mark
-  d. Display how many students scored that mark
-================================================================================
-*/
+// Set 62 - Student Marks Binary Search: First & Last Occurrence
+// Maintain a sorted list of student marks that
+// may contain duplicates. Write functions to:
+// a. Read N marks and sort them in ascending order
+// b. Find the first occurrence of a given mark using binary search
+// c. Find the last occurrence of the same mark
+// d. Display how many students scored that mark
 
 #include <iostream>
 using namespace std;
@@ -37,9 +32,6 @@ int findLast(int arr[], int n, int target) {
 }
 
 int main() {
-        cout << "=====================================================\n";
-    cout << "  SET 62: Student Marks Binary Search: First & Last Occurrence\n";
-    cout << "=====================================================\n";
 int n;
     cout << "Enter number of student marks: "; cin >> n;
     int arr[100];

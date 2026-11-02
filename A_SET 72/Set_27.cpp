@@ -1,17 +1,12 @@
-/*
-================================================================================
-Title: Set 27 - Hospital Bill Formula (Infix to Postfix & Evaluation)
-Problem Statement:
-  Given a bill calculation formula in infix
-  form (for example,
-  (Consultation + Medicine) * Days
-  -
-  Insurance
-  ), write a program to:
-  a. Convert the infix expression to postfix
-  b. Evaluate the postfix expression for given inputs
-================================================================================
-*/
+// Set 27 - Hospital Bill Formula (Infix to Postfix & Evaluation)
+// Given a bill calculation formula in infix
+// form (for example,
+// (Consultation + Medicine) * Days
+// -
+// Insurance
+// ), write a program to:
+// a. Convert the infix expression to postfix
+// b. Evaluate the postfix expression for given inputs
 
 #include <iostream>
 #include <stack>
@@ -44,9 +39,6 @@ string toPostfix(string infix) {
 }
 
 int main() {
-        cout << "=====================================================\n";
-    cout << "  SET 27: Hospital Bill Formula (Infix to Postfix & Evaluation)\n";
-    cout << "=====================================================\n";
 string formula = "(C+M)*D-I";
     cout << "--- Set 27: Hospital Bill Formula ---\n";
     cout << "Infix Formula: " << formula << " (C=Consultation, M=Medicine, D=Days, I=Insurance)\n";

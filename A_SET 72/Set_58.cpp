@@ -1,14 +1,9 @@
-/*
-================================================================================
-Title: Set 58 - Railway Timetable Lookup using Binary Search
-Problem Statement:
-  Maintain a railway timetable (Train No, Train Name, Departure Time). Write functions to:
-  a. Read N trains and sort them by Train No
-  b. Search a train using binary search
-  c. Display the train details if found
-  d. Display "Train not available" otherwise
-================================================================================
-*/
+// Set 58 - Railway Timetable Lookup using Binary Search
+// Maintain a railway timetable (Train No, Train Name, Departure Time). Write functions to:
+// a. Read N trains and sort them by Train No
+// b. Search a train using binary search
+// c. Display the train details if found
+// d. Display "Train not available" otherwise
 
 #include <iostream>
 #include <string>
@@ -21,9 +16,6 @@ struct Train {
 };
 
 int main() {
-        cout << "=====================================================\n";
-    cout << "  SET 58: Railway Timetable Lookup using Binary Search\n";
-    cout << "=====================================================\n";
 int n;
     cout << "Enter number of trains: "; cin >> n;
     Train arr[100];

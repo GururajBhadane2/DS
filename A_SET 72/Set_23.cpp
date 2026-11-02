@@ -1,17 +1,12 @@
-/*
-================================================================================
-Title: Set 23 - Amazon Warehouse Order Return Handling using Stack
-Problem Statement:
-  Simulate the order return handling of an
-  Amazon warehouse using a stack. Each
-  returned parcel has an Order ID, Product Name, and Price. Write functions to:
-  a. Push a newly returned parcel onto the stack (display “Stack Overflow” if the stack is full)
-  b. Pop the top parcel when it is processed and display its details (display “Stack Underflow” if
-  the stack is empty)
-  c. Peek and display the parcel currently on top of the stack without removing it
-  d. Display all parcels in the stack from top to bottom
-================================================================================
-*/
+// Set 23 - Amazon Warehouse Order Return Handling using Stack
+// Simulate the order return handling of an
+// Amazon warehouse using a stack. Each
+// returned parcel has an Order ID, Product Name, and Price. Write functions to:
+// a. Push a newly returned parcel onto the stack (display “Stack Overflow” if the stack is full)
+// b. Pop the top parcel when it is processed and display its details (display “Stack Underflow” if
+// the stack is empty)
+// c. Peek and display the parcel currently on top of the stack without removing it
+// d. Display all parcels in the stack from top to bottom
 
 #include <iostream>
 #include <string>
@@ -58,9 +53,6 @@ void display() {
 }
 
 int main() {
-        cout << "=====================================================\n";
-    cout << "  SET 23: Amazon Warehouse Order Return Handling using Stack\n";
-    cout << "=====================================================\n";
 int ch;
     do {
         cout << "\n--- Set 23: Warehouse Order Return Stack ---\n";

@@ -1,15 +1,10 @@
-/*
-================================================================================
-Title: Set 09 - Doctors List Sorted by Doctor ID using Doubly Linked List
-Problem Statement:
-  Maintain a list of doctors sorted by Doctor
-  ID using a doubly linked list. Write functions to:
-  a. Insert a doctor so that the list remains sorted
-  b. Delete a doctor by Doctor ID
-  c. Traverse forward and display all doctors
-  d. Traverse backward and display all doctors in reverse order
-================================================================================
-*/
+// Set 09 - Doctors List Sorted by Doctor ID using Doubly Linked List
+// Maintain a list of doctors sorted by Doctor
+// ID using a doubly linked list. Write functions to:
+// a. Insert a doctor so that the list remains sorted
+// b. Delete a doctor by Doctor ID
+// c. Traverse forward and display all doctors
+// d. Traverse backward and display all doctors in reverse order
 
 #include <iostream>
 #include <string>
@@ -85,9 +80,6 @@ void traverseBackward() {
 }
 
 int main() {
-        cout << "=====================================================\n";
-    cout << "  SET 09: Doctors List Sorted by Doctor ID using Doubly Linked List\n";
-    cout << "=====================================================\n";
 int ch;
     do {
         cout << "\n--- Set 9: Sorted Doctors List (DLL) ---\n";
